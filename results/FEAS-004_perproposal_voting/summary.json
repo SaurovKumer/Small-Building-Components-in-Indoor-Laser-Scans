@@ -1,0 +1,300 @@
+{
+ "_source": "Transcribed from the Kaggle log of notebook 09-perproposal-voting, version 2 ('FEAS-004 GPU per-proposal voting LOSO', GPU T4 x2, 854.4 s, 2026-11-14). summary.json, proposals.csv, features.npz and galleries are in the Output tab of that version.",
+ "stations": {
+  "S163": {
+   "how": "tripod 0.75",
+   "ceiling": 16.08,
+   "proposals": 363,
+   "positives": {
+    "Damper": 13,
+    "Exit sign": 12,
+    "Fire terminal": 2,
+    "Outlet": 0,
+    "Switch": 15
+   },
+   "covered": "3/4"
+  },
+  "S164": {
+   "how": "floor centre",
+   "ceiling": 16.07,
+   "proposals": 347,
+   "positives": {
+    "Damper": 9,
+    "Exit sign": 21,
+    "Fire terminal": 9,
+    "Outlet": 0,
+    "Switch": 0
+   },
+   "covered": "5/5"
+  },
+  "S165": {
+   "how": "tripod 0.75",
+   "ceiling": 16.11,
+   "proposals": 221,
+   "positives": {
+    "Damper": 0,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 20,
+    "Switch": 18
+   },
+   "covered": "2/2"
+  },
+  "S168": {
+   "how": "floor centre",
+   "ceiling": 16.07,
+   "proposals": 220,
+   "positives": {
+    "Damper": 10,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 1,
+    "Switch": 0
+   },
+   "covered": "2/3"
+  },
+  "S169": {
+   "how": "tripod 0.75",
+   "ceiling": 16.11,
+   "proposals": 175,
+   "positives": {
+    "Damper": 0,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 21,
+    "Switch": 0
+   },
+   "covered": "4/4"
+  },
+  "S178": {
+   "how": "tripod 0.76",
+   "ceiling": 16.07,
+   "proposals": 266,
+   "positives": {
+    "Damper": 0,
+    "Exit sign": 21,
+    "Fire terminal": 17,
+    "Outlet": 11,
+    "Switch": 15
+   },
+   "covered": "11/12"
+  },
+  "S179": {
+   "how": "floor centre",
+   "ceiling": 16.46,
+   "proposals": 243,
+   "positives": {
+    "Damper": 0,
+    "Exit sign": 24,
+    "Fire terminal": 36,
+    "Outlet": 30,
+    "Switch": 29
+   },
+   "covered": "11/12"
+  }
+ },
+ "totals": {
+  "proposals": 1835,
+  "positive_proposals": 334,
+  "objects": 42,
+  "proposal_recall": "38/42"
+ },
+ "format": "[found, correct segments / segments, point IoU]",
+ "loso_all_7": {
+  "A detector scores": {
+   "found": "32/42",
+   "segments": "22/345",
+   "small_mIoU": 20.38,
+   "Damper": [
+    "2/3",
+    "1/146",
+    0.76
+   ],
+   "Exit sign": [
+    "6/8",
+    "5/64",
+    14.3
+   ],
+   "Fire terminal": [
+    "10/15",
+    "8/33",
+    65.98
+   ],
+   "Outlet": [
+    "9/11",
+    "3/59",
+    9.17
+   ],
+   "Switch": [
+    "5/5",
+    "5/43",
+    11.68
+   ]
+  },
+  "B + 3D context": {
+   "found": "27/42",
+   "segments": "18/138",
+   "small_mIoU": 23.32,
+   "Damper": [
+    "3/3",
+    "3/14",
+    21.58
+   ],
+   "Exit sign": [
+    "6/8",
+    "4/36",
+    19.49
+   ],
+   "Fire terminal": [
+    "7/15",
+    "6/59",
+    24.28
+   ],
+   "Outlet": [
+    "7/11",
+    "2/22",
+    9.27
+   ],
+   "Switch": [
+    "4/5",
+    "3/7",
+    42.0
+   ]
+  },
+  "C + DINOv2 colour": {
+   "found": "28/42",
+   "segments": "15/58",
+   "small_mIoU": 43.14,
+   "Damper": [
+    "3/3",
+    "3/4",
+    50.49
+   ],
+   "Exit sign": [
+    "6/8",
+    "3/7",
+    44.92
+   ],
+   "Fire terminal": [
+    "7/15",
+    "4/27",
+    63.74
+   ],
+   "Outlet": [
+    "9/11",
+    "3/13",
+    21.5
+   ],
+   "Switch": [
+    "3/5",
+    "2/7",
+    35.05
+   ]
+  },
+  "D + DINOv2 intensity (full)": {
+   "found": "28/42",
+   "segments": "17/52",
+   "small_mIoU": 43.45,
+   "Damper": [
+    "3/3",
+    "2/4",
+    25.52
+   ],
+   "Exit sign": [
+    "5/8",
+    "4/7",
+    54.57
+   ],
+   "Fire terminal": [
+    "7/15",
+    "4/22",
+    63.27
+   ],
+   "Outlet": [
+    "9/11",
+    "3/12",
+    21.54
+   ],
+   "Switch": [
+    "4/5",
+    "4/7",
+    52.33
+   ]
+  },
+  "E full without detector scores": {
+   "found": "22/42",
+   "segments": "14/57",
+   "small_mIoU": 29.75,
+   "Damper": [
+    "3/3",
+    "2/4",
+    25.52
+   ],
+   "Exit sign": [
+    "5/8",
+    "4/7",
+    54.72
+   ],
+   "Fire terminal": [
+    "3/15",
+    "3/28",
+    8.91
+   ],
+   "Outlet": [
+    "8/11",
+    "2/12",
+    13.77
+   ],
+   "Switch": [
+    "3/5",
+    "3/6",
+    45.85
+   ]
+  }
+ },
+ "val_S163_S169_point_iou": {
+  "A": {
+   "Damper": 1.41,
+   "Exit sign": 16.69,
+   "Fire terminal": 8.93,
+   "Outlet": 4.04,
+   "Switch": 49.08
+  },
+  "B": {
+   "Damper": 26.62,
+   "Exit sign": 35.81,
+   "Fire terminal": 0.04,
+   "Outlet": 3.53,
+   "Switch": 83.64
+  },
+  "C": {
+   "Damper": 31.85,
+   "Exit sign": 72.69,
+   "Fire terminal": 0.0,
+   "Outlet": 9.02,
+   "Switch": 82.62
+  },
+  "D": {
+   "Damper": 31.85,
+   "Exit sign": 72.69,
+   "Fire terminal": 0.0,
+   "Outlet": 9.01,
+   "Switch": 83.44
+  },
+  "E": {
+   "Damper": 31.85,
+   "Exit sign": 72.74,
+   "Fire terminal": 0.0,
+   "Outlet": 10.17,
+   "Switch": 83.57
+  },
+  "B1_3D_baseline_3seeds": {
+   "Damper": 0.0,
+   "Exit sign": 79.13,
+   "Fire terminal": 89.9,
+   "Outlet": 0.0,
+   "Switch": 0.0
+  }
+ },
+ "note": "Validation numbers here are leave-one-station-out (trained on the other 6 stations, i.e. including the other validation station) - not identical to the 3D baselines' protocol (trained on the 5 training stations)."
+}

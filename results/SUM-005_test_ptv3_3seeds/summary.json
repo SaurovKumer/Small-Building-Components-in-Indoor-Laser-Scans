@@ -1,0 +1,120 @@
+{
+ "PTv3": {
+  "mIoU": {
+   "values": [
+    64.85,
+    60.21,
+    62.4
+   ],
+   "mean": 62.49,
+   "sd": 2.32
+  },
+  "mAcc": {
+   "values": [
+    70.84,
+    65.33,
+    68.69
+   ],
+   "mean": 68.29,
+   "sd": 2.78
+  },
+  "OA": {
+   "values": [
+    94.96,
+    94.64,
+    94.24
+   ],
+   "mean": 94.61,
+   "sd": 0.36
+  },
+  "iou_cls_mean": {
+   "Column": 0.0,
+   "Components": 58.21,
+   "Covering": 98.05,
+   "Damper": 63.58,
+   "Door": 80.27,
+   "Exit sign": 60.03,
+   "Fire terminal": 58.27,
+   "Furniture": 74.44,
+   "Heater": 74.6,
+   "Lamp": 76.87,
+   "Outlet": 0.0,
+   "Railing": 84.05,
+   "Slab": 94.39,
+   "Stair": 93.31,
+   "Switch": 0.0,
+   "Wall": 91.81,
+   "Window": 65.94,
+   "Clutter": 50.9
+  },
+  "small_mIoU_per_seed": [
+   44.86,
+   27.68,
+   36.59
+  ]
+ },
+ "PTv3+2D": {
+  "mIoU": {
+   "values": [
+    65.45,
+    60.99,
+    63.31
+   ],
+   "mean": 63.25,
+   "sd": 2.23
+  },
+  "mAcc": {
+   "values": [
+    71.67,
+    66.36,
+    69.82
+   ],
+   "mean": 69.28,
+   "sd": 2.7
+  },
+  "OA": {
+   "values": [
+    94.94,
+    94.62,
+    94.22
+   ],
+   "mean": 94.59,
+   "sd": 0.36
+  },
+  "iou_cls_mean": {
+   "Column": 0.0,
+   "Components": 58.21,
+   "Covering": 98.06,
+   "Damper": 78.49,
+   "Door": 80.27,
+   "Exit sign": 60.03,
+   "Fire terminal": 58.27,
+   "Furniture": 74.44,
+   "Heater": 74.6,
+   "Lamp": 75.77,
+   "Outlet": 0.0,
+   "Railing": 84.05,
+   "Slab": 94.39,
+   "Stair": 93.31,
+   "Switch": 0.0,
+   "Wall": 91.79,
+   "Window": 65.94,
+   "Clutter": 50.9
+  },
+  "small_mIoU_per_seed": [
+   47.27,
+   30.71,
+   40.09
+  ]
+ },
+ "gain_mIoU_per_seed": [
+  0.6,
+  0.78,
+  0.91
+ ],
+ "gain_Damper_per_seed": [
+  12.07,
+  15.16,
+  17.51
+ ]
+}

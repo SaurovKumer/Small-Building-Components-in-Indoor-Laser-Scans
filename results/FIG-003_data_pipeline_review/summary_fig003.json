@@ -1,0 +1,158 @@
+{
+ "review_effort_LOSO": {
+  "Switch": {
+   "objects": 5,
+   "classifier": {
+    "top1": 3,
+    "top3": 4,
+    "top5": 4,
+    "top10": 5,
+    "top20": 5,
+    "top30": 5,
+    "top50": 5,
+    "top100": 5,
+    "top150": 5,
+    "K_all_found": 9
+   },
+   "detector": {
+    "top1": 3,
+    "top3": 4,
+    "top5": 4,
+    "top10": 5,
+    "top20": 5,
+    "top30": 5,
+    "top50": 5,
+    "top100": 5,
+    "top150": 5,
+    "K_all_found": 9
+   }
+  },
+  "Outlet": {
+   "objects": 11,
+   "classifier": {
+    "top1": 6,
+    "top3": 10,
+    "top5": 10,
+    "top10": 10,
+    "top20": 10,
+    "top30": 10,
+    "top50": 10,
+    "top100": 10,
+    "top150": 10,
+    "K_all_found": null
+   },
+   "detector": {
+    "top1": 5,
+    "top3": 7,
+    "top5": 7,
+    "top10": 10,
+    "top20": 10,
+    "top30": 10,
+    "top50": 10,
+    "top100": 10,
+    "top150": 10,
+    "K_all_found": null
+   }
+  },
+  "Damper": {
+   "objects": 3,
+   "classifier": {
+    "top1": 3,
+    "top3": 3,
+    "top5": 3,
+    "top10": 3,
+    "top20": 3,
+    "top30": 3,
+    "top50": 3,
+    "top100": 3,
+    "top150": 3,
+    "K_all_found": 1
+   },
+   "detector": {
+    "top1": 1,
+    "top3": 1,
+    "top5": 1,
+    "top10": 1,
+    "top20": 1,
+    "top30": 1,
+    "top50": 3,
+    "top100": 3,
+    "top150": 3,
+    "K_all_found": 33
+   }
+  }
+ },
+ "stations": {
+  "S164": {
+   "proposals": 318,
+   "candidates": 51,
+   "seconds": 104.0
+  },
+  "S165": {
+   "proposals": 216,
+   "candidates": 49,
+   "seconds": 89.4
+  },
+  "S168": {
+   "proposals": 210,
+   "candidates": 40,
+   "seconds": 88.9
+  },
+  "S178": {
+   "proposals": 275,
+   "candidates": 45,
+   "seconds": 100.3
+  },
+  "S179": {
+   "proposals": 230,
+   "candidates": 32,
+   "seconds": 92.5
+  },
+  "S163": {
+   "proposals": 355,
+   "candidates": 54,
+   "seconds": 104.4
+  },
+  "S169": {
+   "proposals": 162,
+   "candidates": 46,
+   "seconds": 93.4
+  }
+ },
+ "view": {
+  "station": "S163",
+  "view_index": 5,
+  "yaw": 225,
+  "pitch": -30,
+  "object_class": "Switch",
+  "object_points": 1473,
+  "station_points": 5530873,
+  "object_pixels": 3244,
+  "bbox": [
+   690,
+   587,
+   752,
+   645
+  ]
+ },
+ "data_fig_classes": [
+  "Door",
+  "Slab",
+  "Switch",
+  "Wall",
+  "Window"
+ ],
+ "pipeline_fig": {
+  "view_detections_merged": 9,
+  "boxes_in_crop": 4,
+  "proposals_from_view": 8,
+  "crop": [
+   551,
+   446,
+   891,
+   786
+  ],
+  "object_recall_final": 0.814,
+  "object_recall_3d": 0.0
+ }
+}

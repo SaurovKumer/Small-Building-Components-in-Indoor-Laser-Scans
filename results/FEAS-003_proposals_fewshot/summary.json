@@ -1,0 +1,263 @@
+{
+ "_source": "Transcribed from the Kaggle log of notebook 08-proposals-fewshot-classifier, version 2 ('FEAS-003 GPU proposals + few-shot LOSO', GPU T4 x2, 797.7 s, 2026-11-14). summary.json, candidates.csv, features.npz and galleries are in the Output tab of that version.",
+ "stations": {
+  "S163": {
+   "how": "tripod disc r 0.75",
+   "floor": 13.68,
+   "ceiling": 16.08,
+   "proposals": 520,
+   "candidates": 50,
+   "positive_candidates": 4,
+   "objects_covered": "3/4"
+  },
+  "S164": {
+   "how": "floor centre",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 495,
+   "candidates": 62,
+   "positive_candidates": 3,
+   "objects_covered": "5/5"
+  },
+  "S165": {
+   "how": "tripod disc r 0.75",
+   "floor": 13.67,
+   "ceiling": 16.11,
+   "proposals": 313,
+   "candidates": 53,
+   "positive_candidates": 2,
+   "objects_covered": "2/2"
+  },
+  "S168": {
+   "how": "floor centre",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 326,
+   "candidates": 46,
+   "positive_candidates": 0,
+   "objects_covered": "2/3"
+  },
+  "S169": {
+   "how": "tripod disc r 0.75",
+   "floor": 13.67,
+   "ceiling": 16.11,
+   "proposals": 241,
+   "candidates": 54,
+   "positive_candidates": 1,
+   "objects_covered": "4/4"
+  },
+  "S178": {
+   "how": "tripod disc r 0.76",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 438,
+   "candidates": 41,
+   "positive_candidates": 6,
+   "objects_covered": "11/12"
+  },
+  "S179": {
+   "how": "floor centre",
+   "floor": 13.66,
+   "ceiling": 19.4,
+   "proposals": 387,
+   "candidates": 34,
+   "positive_candidates": 4,
+   "objects_covered": "11/12"
+  }
+ },
+ "proposal_recall": {
+  "Damper": "3/3",
+  "Exit sign": "8/8",
+  "Fire terminal": "13/15",
+  "Outlet": "9/11",
+  "Switch": "5/5",
+  "total": "38/42"
+ },
+ "loso_all_7": {
+  "A detector scores": {
+   "found": "20/42",
+   "small_mIoU": 15.27,
+   "Damper": [
+    "1/3",
+    "0/6",
+    1.38
+   ],
+   "Exit sign": [
+    "3/8",
+    "0/56",
+    2.48
+   ],
+   "Fire terminal": [
+    "9/15",
+    "6/16",
+    57.09
+   ],
+   "Outlet": [
+    "3/11",
+    "1/18",
+    3.33
+   ],
+   "Switch": [
+    "4/5",
+    "3/12",
+    12.06
+   ]
+  },
+  "B + 3D context": {
+   "found": "16/42",
+   "small_mIoU": 19.25,
+   "Damper": [
+    "1/3",
+    "0/5",
+    2.09
+   ],
+   "Exit sign": [
+    "0/8",
+    "0/11",
+    0.0
+   ],
+   "Fire terminal": [
+    "8/15",
+    "4/13",
+    59.47
+   ],
+   "Outlet": [
+    "4/11",
+    "1/15",
+    8.98
+   ],
+   "Switch": [
+    "3/5",
+    "2/6",
+    25.7
+   ]
+  },
+  "C + DINOv2 colour": {
+   "found": "13/42",
+   "small_mIoU": 17.03,
+   "Damper": [
+    "1/3",
+    "0/2",
+    2.8
+   ],
+   "Exit sign": [
+    "2/8",
+    "1/4",
+    22.37
+   ],
+   "Fire terminal": [
+    "3/15",
+    "2/11",
+    8.89
+   ],
+   "Outlet": [
+    "3/11",
+    "1/5",
+    9.41
+   ],
+   "Switch": [
+    "4/5",
+    "3/6",
+    41.7
+   ]
+  },
+  "D + DINOv2 intensity (full)": {
+   "found": "19/42",
+   "small_mIoU": 24.02,
+   "Damper": [
+    "1/3",
+    "0/1",
+    5.14
+   ],
+   "Exit sign": [
+    "3/8",
+    "3/5",
+    29.02
+   ],
+   "Fire terminal": [
+    "8/15",
+    "3/8",
+    30.98
+   ],
+   "Outlet": [
+    "3/11",
+    "1/5",
+    9.41
+   ],
+   "Switch": [
+    "4/5",
+    "3/5",
+    45.57
+   ]
+  },
+  "E full without detector scores": {
+   "found": "17/42",
+   "small_mIoU": 35.59,
+   "Damper": [
+    "3/3",
+    "2/3",
+    23.76
+   ],
+   "Exit sign": [
+    "3/8",
+    "3/5",
+    29.02
+   ],
+   "Fire terminal": [
+    "5/15",
+    "3/14",
+    62.57
+   ],
+   "Outlet": [
+    "3/11",
+    "1/7",
+    7.81
+   ],
+   "Switch": [
+    "3/5",
+    "3/4",
+    54.77
+   ]
+  }
+ },
+ "per_class_format": "[objects found, correct/predicted candidates, point IoU %]",
+ "val_S163_S169_point_iou": {
+  "A": {
+   "Damper": 0.0,
+   "Exit sign": 0.0,
+   "Fire terminal": 9.18,
+   "Outlet": 5.46,
+   "Switch": 40.34
+  },
+  "B": {
+   "Damper": 0.0,
+   "Exit sign": 0.0,
+   "Fire terminal": 0.0,
+   "Outlet": 23.73,
+   "Switch": 40.34
+  },
+  "C": {
+   "Damper": 0.0,
+   "Exit sign": 0.25,
+   "Fire terminal": 0.0,
+   "Outlet": 29.05,
+   "Switch": 40.34
+  },
+  "D": {
+   "Damper": 0.0,
+   "Exit sign": 35.46,
+   "Fire terminal": 0.0,
+   "Outlet": 29.05,
+   "Switch": 40.34
+  },
+  "E": {
+   "Damper": 32.31,
+   "Exit sign": 35.46,
+   "Fire terminal": 0.0,
+   "Outlet": 29.05,
+   "Switch": 40.34
+  }
+ },
+ "diagnosis": "Proposals cover 38/42 objects, but only 20 candidates in all stations carry a small-object label: merging proposals by chained 10 cm centroid distance and taking the union of their points makes large mixed candidates whose majority is background. Real positive training examples are therefore ~20 (+42 best-view examples); precision is low. S179 ceiling wrongly estimated at 19.40 m (stairwell).",
+ "next": "FEAS-004: classify every proposal on its own (label from its own points; each object appears in several views -> several examples), then multi-view voting of class probabilities per 3D point; robust ceiling estimate."
+}

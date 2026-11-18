@@ -1,0 +1,55 @@
+{
+ "_source": "Read from the scoring log (scoring_stdout via the submission details API) of Codabench competition 6927, 2026-11-17 ~08:50 Asia/Dhaka. Uploaded by the authors. 2026-11-17 08:38-08:40.",
+ "submission": {
+  "id": 1056260,
+  "file": "CODA-010_seed2_PTv3_plus_2D.zip = submission_hybrid_ptv3_fused.zip of Kaggle 15-hybrid-ptv3 v6 (HYB-007)",
+  "task": "Gold - Real labels",
+  "status": "Finished",
+  "leaderboard": "not added"
+ },
+ "test_metrics": {
+  "mIoU": 63.31,
+  "mAcc": 69.82,
+  "OA": 94.22
+ },
+ "iou_cls": {
+  "Column": 0.0,
+  "Components": 55.04,
+  "Covering": 98.07,
+  "Damper": 75.73,
+  "Door": 81.2,
+  "Exit sign": 66.31,
+  "Fire terminal": 58.41,
+  "Furniture": 69.63,
+  "Heater": 78.08,
+  "Lamp": 76.65,
+  "Outlet": 0.0,
+  "Railing": 82.19,
+  "Slab": 94.22,
+  "Stair": 93.26,
+  "Switch": 0.0,
+  "Wall": 90.41,
+  "Window": 67.28,
+  "Clutter": 53.04
+ },
+ "accuracy_cls": {
+  "Column": 0.0,
+  "Components": 58.64,
+  "Covering": 99.45,
+  "Damper": 80.14,
+  "Door": 94.28,
+  "Exit sign": 85.69,
+  "Fire terminal": 71.32,
+  "Furniture": 73.31,
+  "Heater": 79.12,
+  "Lamp": 79.01,
+  "Outlet": 0.0,
+  "Railing": 92.72,
+  "Slab": 98.01,
+  "Stair": 95.73,
+  "Switch": 0.0,
+  "Wall": 96.39,
+  "Window": 80.66,
+  "Clutter": 72.35
+ }
+}

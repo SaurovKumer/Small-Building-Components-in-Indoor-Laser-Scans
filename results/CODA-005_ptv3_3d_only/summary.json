@@ -1,0 +1,62 @@
+{
+ "_source": "Read from the scoring log (submission details -> LOGS) on the Codabench page of competition 6927, 2026-11-15 about 16:30 Asia/Dhaka. Uploaded by the authors.",
+ "submission": {
+  "id": 1053438,
+  "file": "submission_ptv3_3d_only.zip (Kaggle 15-hybrid-ptv3 v4 Output)",
+  "model": "PTv3 (EXP-007) 3D only",
+  "task": "Gold - Real labels",
+  "submitted": "2026-11-15 16:2x",
+  "status": "Finished"
+ },
+ "test_metrics": {
+  "mIoU": 64.85,
+  "mAcc": 70.84,
+  "OA": 94.96
+ },
+ "iou_cls": {
+  "Column": 0.0,
+  "Components": 60.33,
+  "Covering": 98.05,
+  "Damper": 64.55,
+  "Door": 78.72,
+  "Exit sign": 83.9,
+  "Fire terminal": 75.85,
+  "Furniture": 80.16,
+  "Heater": 67.22,
+  "Lamp": 76.19,
+  "Outlet": 0.0,
+  "Railing": 83.96,
+  "Slab": 94.92,
+  "Stair": 92.94,
+  "Switch": 0.0,
+  "Wall": 92.36,
+  "Window": 65.0,
+  "Clutter": 53.09
+ },
+ "accuracy_cls": {
+  "Column": 0.0,
+  "Components": 62.84,
+  "Covering": 99.46,
+  "Damper": 64.84,
+  "Door": 95.51,
+  "Exit sign": 91.48,
+  "Fire terminal": 79.93,
+  "Furniture": 84.49,
+  "Heater": 79.73,
+  "Lamp": 77.7,
+  "Outlet": 0.0,
+  "Railing": 92.78,
+  "Slab": 97.83,
+  "Stair": 95.71,
+  "Switch": 0.0,
+  "Wall": 95.35,
+  "Window": 74.43,
+  "Clutter": 83.05
+ },
+ "compare": {
+  "CODA-003 (best before, PointNet++ hybrid)": 57.71,
+  "CODA-001 (PointNet++ 3D only)": 53.58,
+  "Swin3D-L + intensity (published, to verify)": 52.02
+ },
+ "submissions_used": "6/50 total"
+}

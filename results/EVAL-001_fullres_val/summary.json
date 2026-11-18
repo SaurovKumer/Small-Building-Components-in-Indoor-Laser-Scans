@@ -1,0 +1,484 @@
+{
+ "_source": "Hand-transcribed on 2026-11-13 from Kaggle notebook saurovkumar/05-fullres-validation. EXP-002 and the oracle: log of version 2 ('EVAL-001 on EXP-002 ckpt', GPU, 187.5 s). EXP-001: interactive GPU session of the same notebook with version 2 of notebook 04 attached (not a saved Kaggle version); metrics recomputed in the console from the confusion matrices the notebook saved. Both runs reproduce their stored 2 cm validation mIoU exactly (57.72 / 53.46).",
+ "validation": [
+  "S163",
+  "S169"
+ ],
+ "small_classes": [
+  "Damper",
+  "Exit sign",
+  "Fire terminal",
+  "Outlet",
+  "Switch"
+ ],
+ "modes": {
+  "2cm": "scored on the 2 cm points (as during training)",
+  "full_from_2cm": "2 cm predictions copied to all original points",
+  "1cm": "2 cm-trained network applied to 1 cm points",
+  "full_from_1cm": "1 cm predictions copied to all original points"
+ },
+ "points_per_class": {
+  "original": {
+   "Components": 194458,
+   "Covering": 5123289,
+   "Damper": 1522,
+   "Door": 1238402,
+   "Exit sign": 9694,
+   "Fire terminal": 5591,
+   "Furniture": 1170678,
+   "Heater": 77909,
+   "Lamp": 32302,
+   "Outlet": 820,
+   "Slab": 2510378,
+   "Switch": 1473,
+   "Wall": 3920775,
+   "Window": 458889,
+   "Clutter": 416213
+  },
+  "2cm": {
+   "Components": 4049,
+   "Covering": 86847,
+   "Damper": 46,
+   "Door": 63748,
+   "Exit sign": 275,
+   "Fire terminal": 316,
+   "Furniture": 34094,
+   "Heater": 2516,
+   "Lamp": 2246,
+   "Outlet": 34,
+   "Slab": 79273,
+   "Switch": 27,
+   "Wall": 141193,
+   "Window": 19477,
+   "Clutter": 13969
+  },
+  "1cm": {
+   "Components": 14492,
+   "Covering": 313330,
+   "Damper": 153,
+   "Door": 210584,
+   "Exit sign": 1005,
+   "Fire terminal": 985,
+   "Furniture": 118215,
+   "Heater": 9250,
+   "Lamp": 5644,
+   "Outlet": 121,
+   "Slab": 265345,
+   "Switch": 129,
+   "Wall": 461722,
+   "Window": 64498,
+   "Clutter": 46201
+  }
+ },
+ "oracle_on_original_points": {
+  "2cm": {
+   "mIoU": 91.6,
+   "small_mIoU": 80.19,
+   "mAcc": 94.71,
+   "OA": 99.39,
+   "iou": {
+    "Components": 99.42,
+    "Covering": 99.59,
+    "Damper": 86.47,
+    "Door": 98.93,
+    "Exit sign": 97.0,
+    "Fire terminal": 100.0,
+    "Furniture": 97.67,
+    "Heater": 99.29,
+    "Lamp": 89.52,
+    "Outlet": 49.92,
+    "Slab": 99.21,
+    "Switch": 67.57,
+    "Wall": 98.58,
+    "Window": 96.55,
+    "Clutter": 94.29
+   }
+  },
+  "1cm": {
+   "mIoU": 94.92,
+   "small_mIoU": 88.27,
+   "mAcc": 97.17,
+   "OA": 99.66,
+   "iou": {
+    "Components": 99.7,
+    "Covering": 99.8,
+    "Damper": 91.6,
+    "Door": 99.48,
+    "Exit sign": 98.34,
+    "Fire terminal": 100.0,
+    "Furniture": 98.45,
+    "Heater": 99.33,
+    "Lamp": 92.63,
+    "Outlet": 59.72,
+    "Slab": 99.63,
+    "Switch": 91.66,
+    "Wall": 99.29,
+    "Window": 98.05,
+    "Clutter": 96.07
+   }
+  }
+ },
+ "EXP-001_B0_pointnet2_rgb_2cm": {
+  "2cm": {
+   "mIoU": 53.46,
+   "small_mIoU": 29.38,
+   "mAcc": 59.29,
+   "OA": 87.36,
+   "iou": {
+    "Components": 58.07,
+    "Covering": 97.12,
+    "Damper": 0.0,
+    "Door": 73.43,
+    "Exit sign": 56.88,
+    "Fire terminal": 90.03,
+    "Furniture": 50.19,
+    "Heater": 61.91,
+    "Lamp": 65.01,
+    "Outlet": 0.0,
+    "Slab": 96.07,
+    "Switch": 0.0,
+    "Wall": 78.59,
+    "Window": 36.35,
+    "Clutter": 38.29
+   }
+  },
+  "full_from_2cm": {
+   "mIoU": 55.58,
+   "small_mIoU": 29.3,
+   "mAcc": 61.33,
+   "OA": 91.18,
+   "iou": {
+    "Components": 67.83,
+    "Covering": 99.02,
+    "Damper": 0.0,
+    "Door": 77.7,
+    "Exit sign": 62.58,
+    "Fire terminal": 83.93,
+    "Furniture": 57.32,
+    "Heater": 70.86,
+    "Lamp": 63.51,
+    "Outlet": 0.0,
+    "Slab": 96.72,
+    "Switch": 0.0,
+    "Wall": 82.61,
+    "Window": 30.77,
+    "Clutter": 40.83
+   }
+  },
+  "1cm": {
+   "mIoU": 41.94,
+   "small_mIoU": 21.25,
+   "mAcc": 49.58,
+   "OA": 81.16,
+   "iou": {
+    "Components": 47.88,
+    "Covering": 75.84,
+    "Damper": 0.0,
+    "Door": 71.57,
+    "Exit sign": 40.79,
+    "Fire terminal": 65.47,
+    "Furniture": 46.89,
+    "Heater": 21.76,
+    "Lamp": 49.51,
+    "Outlet": 0.0,
+    "Slab": 76.03,
+    "Switch": 0.0,
+    "Wall": 75.68,
+    "Window": 24.61,
+    "Clutter": 33.09
+   }
+  },
+  "full_from_1cm": {
+   "mIoU": 38.05,
+   "small_mIoU": 20.46,
+   "mAcc": 48.43,
+   "OA": 68.18,
+   "iou": {
+    "Components": 61.0,
+    "Covering": 39.38,
+    "Damper": 0.0,
+    "Door": 65.85,
+    "Exit sign": 46.05,
+    "Fire terminal": 56.23,
+    "Furniture": 50.97,
+    "Heater": 23.47,
+    "Lamp": 51.49,
+    "Outlet": 0.0,
+    "Slab": 43.9,
+    "Switch": 0.0,
+    "Wall": 77.14,
+    "Window": 19.99,
+    "Clutter": 35.28
+   }
+  }
+ },
+ "EXP-002_B1_pointnet2_rgbi_2cm": {
+  "2cm": {
+   "mIoU": 57.72,
+   "small_mIoU": 33.94,
+   "mAcc": 63.75,
+   "OA": 90.38,
+   "iou": {
+    "Components": 31.84,
+    "Covering": 97.65,
+    "Damper": 0,
+    "Door": 82.09,
+    "Exit sign": 80.39,
+    "Fire terminal": 89.31,
+    "Furniture": 59.48,
+    "Heater": 77.02,
+    "Lamp": 79.73,
+    "Outlet": 0,
+    "Slab": 96.36,
+    "Switch": 0,
+    "Wall": 85.83,
+    "Window": 45.08,
+    "Clutter": 41.09
+   }
+  },
+  "full_from_2cm": {
+   "mIoU": 58.78,
+   "small_mIoU": 34.3,
+   "mAcc": 64.53,
+   "OA": 92.69,
+   "iou": {
+    "Components": 35.23,
+    "Covering": 99.22,
+    "Damper": 0,
+    "Door": 81.95,
+    "Exit sign": 78.85,
+    "Fire terminal": 92.63,
+    "Furniture": 63.03,
+    "Heater": 86.61,
+    "Lamp": 72.23,
+    "Outlet": 0,
+    "Slab": 97.47,
+    "Switch": 0,
+    "Wall": 87.98,
+    "Window": 43.97,
+    "Clutter": 42.52
+   }
+  },
+  "1cm": {
+   "mIoU": 51.37,
+   "small_mIoU": 31.28,
+   "mAcc": 57.96,
+   "OA": 88.82,
+   "iou": {
+    "Components": 35.8,
+    "Covering": 94.86,
+    "Damper": 0,
+    "Door": 79.5,
+    "Exit sign": 78.23,
+    "Fire terminal": 78.15,
+    "Furniture": 56.59,
+    "Heater": 44.79,
+    "Lamp": 53.24,
+    "Outlet": 0,
+    "Slab": 96.02,
+    "Switch": 0,
+    "Wall": 84.97,
+    "Window": 31.46,
+    "Clutter": 36.89
+   }
+  },
+  "full_from_1cm": {
+   "mIoU": 49.09,
+   "small_mIoU": 30.89,
+   "mAcc": 57.6,
+   "OA": 86.56,
+   "iou": {
+    "Components": 37.4,
+    "Covering": 83.88,
+    "Damper": 0,
+    "Door": 75.68,
+    "Exit sign": 76.86,
+    "Fire terminal": 77.61,
+    "Furniture": 61.01,
+    "Heater": 49.57,
+    "Lamp": 35.13,
+    "Outlet": 0,
+    "Slab": 96.93,
+    "Switch": 0,
+    "Wall": 80.9,
+    "Window": 27.69,
+    "Clutter": 33.71
+   }
+  }
+ },
+ "EXP-001_confusion_rows_full_from_2cm": {
+  "_note": "true class -> number of original points predicted as each of the 18 classes (class order: Column, Components, Covering, Damper, Door, Exit sign, Fire terminal, Furniture, Heater, Lamp, Outlet, Railing, Slab, Stair, Switch, Wall, Window, Clutter)",
+  "rows": {
+   "Components": [
+    0,
+    140559,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3638,
+    0,
+    0,
+    0,
+    644,
+    1743,
+    0,
+    0,
+    41071,
+    660,
+    6143
+   ],
+   "Damper": [
+    0,
+    0,
+    1436,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    86,
+    0
+   ],
+   "Exit sign": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    6094,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3600,
+    0,
+    0
+   ],
+   "Fire terminal": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    5493,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    91,
+    6,
+    0
+   ],
+   "Outlet": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    820,
+    0,
+    0
+   ],
+   "Switch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    46,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1307,
+    0,
+    120
+   ]
+  },
+  "points_predicted_as": {
+   "Components": 153327,
+   "Damper": 0,
+   "Exit sign": 6138,
+   "Fire terminal": 6447,
+   "Outlet": 0,
+   "Switch": 0
+  }
+ },
+ "EXP-002_where_points_go_full_from_2cm_percent": {
+  "Components": {
+   "Components": 36.4,
+   "Furniture": 36.3,
+   "Wall": 17.1,
+   "Clutter": 6.4
+  },
+  "Damper": {
+   "Covering": 98.3,
+   "Wall": 1.7
+  },
+  "Exit sign": {
+   "Exit sign": 89.6,
+   "Wall": 10.4
+  },
+  "Fire terminal": {
+   "Fire terminal": 99.6,
+   "Window": 0.4
+  },
+  "Outlet": {
+   "Wall": 91.3,
+   "Clutter": 8.7
+  },
+  "Switch": {
+   "Wall": 74.3,
+   "Fire terminal": 22.5,
+   "Slab": 3.1
+  },
+  "points_predicted_as": {
+   "Components": 77068,
+   "Damper": 0,
+   "Exit sign": 10006,
+   "Fire terminal": 5990,
+   "Outlet": 0,
+   "Switch": 0
+  },
+  "precision_percent": {
+   "Components": 91.8,
+   "Exit sign": 86.8,
+   "Fire terminal": 93.0
+  }
+ }
+}

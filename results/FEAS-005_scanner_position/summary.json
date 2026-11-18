@@ -1,0 +1,134 @@
+{
+ "_source": "Values read from the log of Kaggle notebook 11-scanner-position version 1 ('FEAS-005 scanner position', CPU, 250.5 s), 2026-11-14 about 15:42 Asia/Dhaka. Full scanner_positions.json / summary.json / panoramas are in the Kaggle Output.",
+ "chosen_method_all_stations": "A_scanlines",
+ "stations": {
+  "S164": {
+   "old": "floor centre",
+   "median_step_mm": 4.57,
+   "moved_xy_m": 0.314,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.011,
+   "visible_old": 0.98679,
+   "visible_new": 0.99217,
+   "A_xy": [
+    48.68,
+    40.49
+   ]
+  },
+  "S165": {
+   "old": "tripod disc r~0.75",
+   "median_step_mm": 4.16,
+   "moved_xy_m": 0.029,
+   "B_minus_disc_m": 0.046,
+   "A_minus_disc_m": 0.029,
+   "A_minus_B_m": 0.019,
+   "visible_old": 0.98117,
+   "visible_new": 0.98159,
+   "A_xy": [
+    48.94,
+    42.17
+   ]
+  },
+  "S168": {
+   "old": "floor centre",
+   "median_step_mm": 4.46,
+   "moved_xy_m": 0.308,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.023,
+   "visible_old": 0.98093,
+   "visible_new": 0.99246,
+   "A_xy": null
+  },
+  "S178": {
+   "old": "tripod disc r~0.76",
+   "median_step_mm": 2.07,
+   "moved_xy_m": 0.042,
+   "B_minus_disc_m": 0.109,
+   "A_minus_disc_m": 0.042,
+   "A_minus_B_m": 0.07,
+   "visible_old": 0.98538,
+   "visible_new": 0.98676,
+   "A_xy": null
+  },
+  "S179": {
+   "old": "floor centre",
+   "median_step_mm": 4.61,
+   "moved_xy_m": 0.841,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.098,
+   "visible_old": 0.97747,
+   "visible_new": 0.99007,
+   "A_xy": [
+    59.24,
+    33.84
+   ]
+  },
+  "S163": {
+   "old": "tripod disc r~0.75",
+   "median_step_mm": 2.89,
+   "moved_xy_m": 0.016,
+   "B_minus_disc_m": 0.034,
+   "A_minus_disc_m": 0.016,
+   "A_minus_B_m": 0.024,
+   "visible_old": 0.98927,
+   "visible_new": 0.98933,
+   "A_xy": null
+  },
+  "S169": {
+   "old": "tripod disc r~0.75",
+   "median_step_mm": 2.71,
+   "moved_xy_m": 0.031,
+   "B_minus_disc_m": 0.021,
+   "A_minus_disc_m": 0.031,
+   "A_minus_B_m": 0.05,
+   "visible_old": 0.97959,
+   "visible_new": 0.9797,
+   "A_xy": null
+  },
+  "S170": {
+   "old": "floor centre",
+   "median_step_mm": 4.44,
+   "moved_xy_m": 0.36,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.012,
+   "visible_old": 0.98377,
+   "visible_new": 0.99025,
+   "A_xy": [
+    53.93,
+    35.19
+   ]
+  },
+  "S171": {
+   "old": "floor centre",
+   "median_step_mm": 3.33,
+   "moved_xy_m": 0.232,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.073,
+   "visible_old": 0.98309,
+   "visible_new": 0.98719,
+   "A_xy": [
+    55.3,
+    35.47
+   ]
+  },
+  "S180": {
+   "old": "floor centre",
+   "median_step_mm": 4.71,
+   "moved_xy_m": 0.818,
+   "B_minus_disc_m": null,
+   "A_minus_disc_m": null,
+   "A_minus_B_m": 0.244,
+   "visible_old": 0.98049,
+   "visible_new": 0.99507,
+   "A_xy": [
+    62.57,
+    30.2
+   ]
+  }
+ }
+}

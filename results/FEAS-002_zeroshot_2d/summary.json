@@ -1,0 +1,23 @@
+{
+ "_source": "Transcribed from the Kaggle log of notebook 07-zeroshot-2d-detection, version 2 ('FEAS-002 GPU zero-shot all 7 stations', GPU T4 x2, 665.1 s, 2026-11-14). Gallery pictures are screenshots of the notebook figures; summary.json, detections.csv, views/*.jpg and pred/*.npz are in the Output tab of that version.",
+ "models": {"detector": "IDEA-Research/grounding-dino-base", "segmenter": "facebook/sam-vit-base", "transformers": "5.20.2"},
+ "stations": {
+  "S163": {"origin": "tripod disc r 0.75 m", "points_visible_pct": 98, "detections": 40},
+  "S164": {"origin": "tripod disc r 0.16 m (doubtful)", "points_visible_pct": 62, "detections": 8},
+  "S165": {"origin": "tripod disc r 0.75 m", "points_visible_pct": 96, "detections": 21},
+  "S168": {"origin": "floor centre (no tripod disc)", "points_visible_pct": 94, "detections": 15},
+  "S169": {"origin": "tripod disc r 0.75 m", "points_visible_pct": 86, "detections": 7},
+  "S178": {"origin": "floor centre (no tripod disc)", "points_visible_pct": 77, "detections": 75},
+  "S179": {"origin": "floor centre (no tripod disc)", "points_visible_pct": 92, "detections": 89}
+ },
+ "all_7_stations_thr_0.30": {
+  "rgb":  {"Damper": {"gt": 3, "found": 0, "seg_ok": "0/0", "iou": 0.0}, "Exit sign": {"gt": 8, "found": 0, "seg_ok": "0/2", "iou": 0.0}, "Fire terminal": {"gt": 15, "found": 8, "seg_ok": "7/19", "iou": 47.84}, "Outlet": {"gt": 11, "found": 1, "seg_ok": "1/7", "iou": 4.3}, "Switch": {"gt": 5, "found": 0, "seg_ok": "0/2", "iou": 0.06}, "small_mIoU": 10.44},
+  "int":  {"Damper": {"gt": 3, "found": 0, "seg_ok": "0/2", "iou": 0.0}, "Exit sign": {"gt": 8, "found": 0, "seg_ok": "0/2", "iou": 0.0}, "Fire terminal": {"gt": 15, "found": 9, "seg_ok": "6/19", "iou": 39.52}, "Outlet": {"gt": 11, "found": 1, "seg_ok": "1/12", "iou": 1.64}, "Switch": {"gt": 5, "found": 0, "seg_ok": "0/1", "iou": 0.0}, "small_mIoU": 8.23},
+  "both": {"Damper": {"gt": 3, "found": 0, "seg_ok": "0/2", "iou": 0.0}, "Exit sign": {"gt": 8, "found": 0, "seg_ok": "0/3", "iou": 0.0}, "Fire terminal": {"gt": 15, "found": 9, "seg_ok": "6/20", "iou": 39.53}, "Outlet": {"gt": 11, "found": 1, "seg_ok": "1/13", "iou": 1.71}, "Switch": {"gt": 5, "found": 0, "seg_ok": "0/3", "iou": 0.04}, "small_mIoU": 8.26}
+ },
+ "recall_found30_rgb_by_thr": {"0.20": {"Damper": "0/3", "Exit sign": "0/8", "Fire terminal": "8/15", "Outlet": "7/11", "Switch": "0/5"}, "0.25": {"Outlet": "4/11", "Fire terminal": "8/15"}, "0.30": {"Outlet": "1/11", "Fire terminal": "8/15"}, "0.40": {"Fire terminal": "6/15", "Outlet": "0/11"}},
+ "val_S163_S169_rgb_thr_0.30": {"Damper": 0.0, "Exit sign": 0.0, "Fire terminal": 92.46, "Outlet": 0.0, "Switch": 0.54},
+ "detections_by_predicted_class": {"Damper": "6 detections, 0 correct (all are round recessed ceiling lamps)", "Exit sign": "21, 0 correct (all are red EXTINCTEUR / fire-safety signs, a FRANCE sign)", "Fire terminal": "44, 44 correct (all extinguishers)", "Outlet": "134, 24 correct (wrong ones are switches and red manual fire call points)", "Switch": "50, 9 correct (wrong ones: green exit signs, door number plates, EXTINCTEUR signs, notice boards)"},
+ "diagnosis": "Grounding DINO finds the small wall devices (localisation good) but names them wrongly: switches -> 'outlet', green exit signs -> 'switch', red call points (part of Fire terminal) -> 'outlet', downlights -> 'smoke detector', red extinguisher signs -> 'exit sign'. With the per-point argmax a switch detected as outlet (0.41) beats the correct switch detection (0.30). Smoke detectors were never proposed. Three of seven stations had no tripod disc (views from the floor centre).",
+ "decision": "Zero-shot naming is not good enough; zero-shot proposals are useful. Next: class-agnostic proposals + a few-shot classifier on our labelled objects (DINOv2 crop features, leave-one-station-out) + 3D context (height above floor, wall/ceiling, size); better scanner-position estimate for S164/S168/S178/S179."
+}

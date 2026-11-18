@@ -1,0 +1,445 @@
+{
+ "_source": "Transcribed by hand from the Kaggle log of notebook 04-baseline-pointnet2, version 8 (\"EXP-006 B0 rgb seed 2\"). Numbers rounded as printed in the log; means and totals re-checked by script. Originals in that version's Output tab.",
+ "run": "EXP-006_B0_pointnet2_rgb_2cm_seed2",
+ "kaggle_account": "saurovkumar",
+ "kaggle_version": 8,
+ "code_commit_openpoints": "b7ec10f",
+ "torch": "2.11.0+cu130",
+ "gpu": "Tesla T4",
+ "seed": 2,
+ "use_intensity": false,
+ "parameters_M": 0.965,
+ "best_epoch": 30,
+ "train_hours": 1.91,
+ "kaggle_run_seconds": 7108.7,
+ "metrics_best_checkpoint": {
+  "mIoU": 55.84,
+  "mAcc": 60.8,
+  "OA": 88.76,
+  "small_mIoU": 29.45,
+  "n_classes_present": 15
+ },
+ "metrics_last_epoch_40": {
+  "mIoU": 55.26,
+  "small_mIoU": 30.05,
+  "OA": 88.44
+ },
+ "fullres": {
+  "original_points": 15162393,
+  "original_points_metrics": {
+   "mIoU": 58.15,
+   "small_mIoU": 31.05,
+   "mAcc": 62.92,
+   "OA": 91.92
+  },
+  "oracle_2cm": {
+   "mIoU": 91.6,
+   "small_mIoU": 80.19,
+   "mAcc": 94.71,
+   "OA": 99.39
+  }
+ },
+ "per_class": [
+  {
+   "id": 1,
+   "name": "Components",
+   "small": false,
+   "val_points_2cm": 4049,
+   "original_points": 194458,
+   "iou_2cm": 63.39,
+   "iou_original": 73.11,
+   "oracle_2cm": 99.42
+  },
+  {
+   "id": 2,
+   "name": "Covering",
+   "small": false,
+   "val_points_2cm": 86847,
+   "original_points": 5123289,
+   "iou_2cm": 97.49,
+   "iou_original": 99.07,
+   "oracle_2cm": 99.59
+  },
+  {
+   "id": 3,
+   "name": "Damper",
+   "small": true,
+   "val_points_2cm": 46,
+   "original_points": 1522,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 86.47
+  },
+  {
+   "id": 4,
+   "name": "Door",
+   "small": false,
+   "val_points_2cm": 63748,
+   "original_points": 1238402,
+   "iou_2cm": 73.49,
+   "iou_original": 75.75,
+   "oracle_2cm": 98.93
+  },
+  {
+   "id": 5,
+   "name": "Exit sign",
+   "small": true,
+   "val_points_2cm": 275,
+   "original_points": 9694,
+   "iou_2cm": 56.94,
+   "iou_original": 62.03,
+   "oracle_2cm": 97.0
+  },
+  {
+   "id": 6,
+   "name": "Fire terminal",
+   "small": true,
+   "val_points_2cm": 316,
+   "original_points": 5591,
+   "iou_2cm": 90.31,
+   "iou_original": 93.21,
+   "oracle_2cm": 100.0
+  },
+  {
+   "id": 7,
+   "name": "Furniture",
+   "small": false,
+   "val_points_2cm": 34094,
+   "original_points": 1170678,
+   "iou_2cm": 57.51,
+   "iou_original": 61.44,
+   "oracle_2cm": 97.67
+  },
+  {
+   "id": 8,
+   "name": "Heater",
+   "small": false,
+   "val_points_2cm": 2516,
+   "original_points": 77909,
+   "iou_2cm": 71.93,
+   "iou_original": 81.92,
+   "oracle_2cm": 99.29
+  },
+  {
+   "id": 9,
+   "name": "Lamp",
+   "small": false,
+   "val_points_2cm": 2246,
+   "original_points": 32302,
+   "iou_2cm": 62.7,
+   "iou_original": 59.94,
+   "oracle_2cm": 89.52
+  },
+  {
+   "id": 10,
+   "name": "Outlet",
+   "small": true,
+   "val_points_2cm": 34,
+   "original_points": 820,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 49.92
+  },
+  {
+   "id": 12,
+   "name": "Slab",
+   "small": false,
+   "val_points_2cm": 79273,
+   "original_points": 2510378,
+   "iou_2cm": 95.63,
+   "iou_original": 96.34,
+   "oracle_2cm": 99.21
+  },
+  {
+   "id": 14,
+   "name": "Switch",
+   "small": true,
+   "val_points_2cm": 27,
+   "original_points": 1473,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 67.57
+  },
+  {
+   "id": 15,
+   "name": "Wall",
+   "small": false,
+   "val_points_2cm": 141193,
+   "original_points": 3920775,
+   "iou_2cm": 81.54,
+   "iou_original": 84.23,
+   "oracle_2cm": 98.58
+  },
+  {
+   "id": 16,
+   "name": "Window",
+   "small": false,
+   "val_points_2cm": 19477,
+   "original_points": 458889,
+   "iou_2cm": 41.87,
+   "iou_original": 39.56,
+   "oracle_2cm": 96.55
+  },
+  {
+   "id": 17,
+   "name": "Clutter",
+   "small": false,
+   "val_points_2cm": 13969,
+   "original_points": 416213,
+   "iou_2cm": 44.78,
+   "iou_original": 45.6,
+   "oracle_2cm": 94.29
+  }
+ ],
+ "where_original_points_go": {
+  "Components": {
+   "points": 194458,
+   "predicted_as_pct": {
+    "Components": 75.6,
+    "Furniture": 11.5,
+    "Wall": 9.0,
+    "Clutter": 2.4
+   },
+   "predicted_as_this_class": 153503,
+   "precision_pct": 95.7
+  },
+  "Damper": {
+   "points": 1522,
+   "predicted_as_pct": {
+    "Covering": 72.0,
+    "Wall": 28.0
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Exit sign": {
+   "points": 9694,
+   "predicted_as_pct": {
+    "Exit sign": 64.0,
+    "Wall": 36.0
+   },
+   "predicted_as_this_class": 6503,
+   "precision_pct": 95.4
+  },
+  "Fire terminal": {
+   "points": 5591,
+   "predicted_as_pct": {
+    "Fire terminal": 97.7,
+    "Window": 1.7,
+    "Clutter": 0.3,
+    "Wall": 0.3
+   },
+   "predicted_as_this_class": 5735,
+   "precision_pct": 95.3
+  },
+  "Outlet": {
+   "points": 820,
+   "predicted_as_pct": {
+    "Wall": 100.0
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Switch": {
+   "points": 1473,
+   "predicted_as_pct": {
+    "Wall": 100.0
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  }
+ },
+ "test_prediction": {
+  "files": [
+   "pred_test/S170labels.npy",
+   "pred_test/S171labels.npy",
+   "pred_test/S180labels.npy"
+  ],
+  "predicted_points_per_class": {
+   "Column": 0,
+   "Components": 64807,
+   "Covering": 6152257,
+   "Damper": 0,
+   "Door": 1438008,
+   "Exit sign": 82,
+   "Fire terminal": 32,
+   "Furniture": 1069095,
+   "Heater": 31357,
+   "Lamp": 168707,
+   "Outlet": 0,
+   "Railing": 67698,
+   "Slab": 3034125,
+   "Stair": 253779,
+   "Switch": 0,
+   "Wall": 7776501,
+   "Window": 228759,
+   "Clutter": 401598
+  },
+  "submitted_to_codabench": false
+ },
+ "val_history": [
+  {
+   "epoch": 2,
+   "val_mIoU": 18.75,
+   "val_small_mIoU": 0.0,
+   "val_OA": 69.33
+  },
+  {
+   "epoch": 4,
+   "val_mIoU": 23.55,
+   "val_small_mIoU": 0.0,
+   "val_OA": 70.96
+  },
+  {
+   "epoch": 6,
+   "val_mIoU": 27.7,
+   "val_small_mIoU": 0.0,
+   "val_OA": 76.61
+  },
+  {
+   "epoch": 8,
+   "val_mIoU": 29.71,
+   "val_small_mIoU": 0.0,
+   "val_OA": 77.7
+  },
+  {
+   "epoch": 10,
+   "val_mIoU": 32.83,
+   "val_small_mIoU": 0.0,
+   "val_OA": 79.94
+  },
+  {
+   "epoch": 12,
+   "val_mIoU": 35.38,
+   "val_small_mIoU": 5.0,
+   "val_OA": 83.45
+  },
+  {
+   "epoch": 14,
+   "val_mIoU": 38.15,
+   "val_small_mIoU": 1.24,
+   "val_OA": 86.01
+  },
+  {
+   "epoch": 16,
+   "val_mIoU": 49.34,
+   "val_small_mIoU": 26.59,
+   "val_OA": 83.97
+  },
+  {
+   "epoch": 18,
+   "val_mIoU": 49.15,
+   "val_small_mIoU": 22.76,
+   "val_OA": 86.19
+  },
+  {
+   "epoch": 20,
+   "val_mIoU": 50.21,
+   "val_small_mIoU": 29.18,
+   "val_OA": 85.88
+  },
+  {
+   "epoch": 22,
+   "val_mIoU": 52.32,
+   "val_small_mIoU": 26.93,
+   "val_OA": 86.35
+  },
+  {
+   "epoch": 24,
+   "val_mIoU": 52.97,
+   "val_small_mIoU": 29.69,
+   "val_OA": 86.72
+  },
+  {
+   "epoch": 26,
+   "val_mIoU": 54.41,
+   "val_small_mIoU": 29.3,
+   "val_OA": 87.73
+  },
+  {
+   "epoch": 28,
+   "val_mIoU": 54.13,
+   "val_small_mIoU": 31.96,
+   "val_OA": 86.83
+  },
+  {
+   "epoch": 30,
+   "val_mIoU": 55.84,
+   "val_small_mIoU": 29.45,
+   "val_OA": 88.76
+  },
+  {
+   "epoch": 32,
+   "val_mIoU": 54.24,
+   "val_small_mIoU": 28.12,
+   "val_OA": 87.94
+  },
+  {
+   "epoch": 34,
+   "val_mIoU": 55.38,
+   "val_small_mIoU": 28.8,
+   "val_OA": 88.02
+  },
+  {
+   "epoch": 36,
+   "val_mIoU": 55.5,
+   "val_small_mIoU": 29.01,
+   "val_OA": 88.43
+  },
+  {
+   "epoch": 38,
+   "val_mIoU": 55.36,
+   "val_small_mIoU": 29.51,
+   "val_OA": 88.38
+  },
+  {
+   "epoch": 40,
+   "val_mIoU": 55.26,
+   "val_small_mIoU": 30.05,
+   "val_OA": 88.44
+  }
+ ],
+ "train_loss_by_epoch": {
+  "1": 1.7327,
+  "2": 1.5636,
+  "3": 1.5325,
+  "4": 1.4903,
+  "5": 1.4471,
+  "6": 1.4082,
+  "7": 1.3962,
+  "8": 1.3675,
+  "9": 1.3323,
+  "10": 1.305,
+  "11": 1.2916,
+  "12": 1.2635,
+  "13": 1.245,
+  "14": 1.2203,
+  "15": 1.2231,
+  "16": 1.2083,
+  "17": 1.2053,
+  "18": 1.1878,
+  "19": 1.1908,
+  "20": 1.1744,
+  "21": 1.1648,
+  "22": 1.1619,
+  "23": 1.1639,
+  "24": 1.152,
+  "25": 1.1451,
+  "26": 1.1374,
+  "27": 1.1419,
+  "28": 1.1319,
+  "29": 1.1325,
+  "30": 1.1291,
+  "31": 1.1244,
+  "32": 1.1231,
+  "33": 1.1219,
+  "34": 1.122,
+  "35": 1.118,
+  "36": 1.1155,
+  "37": 1.1136,
+  "38": 1.1161,
+  "39": 1.1165,
+  "40": 1.1169
+ },
+ "note": "Validation = S163 + S169. Seed 2 of B0 (third B0 seed)."
+}

@@ -1,0 +1,17 @@
+{
+ "_source": "Transcribed from the Kaggle log of notebook 06-small-object-2d-feasibility, version 1 (CPU, 105.5 s, 2026-11-14). Pictures here are screenshots of the notebook figures; the full-resolution PNGs, instances.csv and summary.json are in that version's Output tab.",
+ "objects_per_class": {
+  "Damper":        {"train": 2,  "val": 1, "per_station": {"S164": 1, "S168": 1, "S163": 1}, "points_per_object_median": 1522, "size_cm_median": [11.7, 9.4], "spacing_mm_median": 1.8, "px_native_median": 58, "px_2cm_median": 5.9, "facing": "ceiling 3"},
+  "Exit sign":     {"train": 7,  "val": 1, "per_station": {"S164": 2, "S178": 3, "S179": 2, "S163": 1}, "points_per_object_median": 2364, "size_cm_median": [30.3, 20.2], "spacing_mm_median": 3.5, "px_native_median": 76, "px_2cm_median": 15.1, "facing": "wall 8"},
+  "Fire terminal": {"train": 14, "val": 1, "per_station": {"S164": 2, "S178": 6, "S179": 6, "S163": 1}, "points_per_object_median": 374, "size_cm_median": [14.1, 9.5], "spacing_mm_median": 3.0, "px_native_median": 56, "px_2cm_median": 7.0, "facing": "wall 15"},
+  "Outlet":        {"train": 7,  "val": 4, "per_station": {"S165": 1, "S168": 2, "S178": 2, "S179": 2, "S169": 4}, "points_per_object_median": 181, "size_cm_median": [8.4, 6.1], "spacing_mm_median": 3.2, "px_native_median": 20, "px_2cm_median": 4.2, "facing": "wall 11"},
+  "Switch":        {"train": 4,  "val": 1, "per_station": {"S165": 1, "S178": 1, "S179": 2, "S163": 1}, "points_per_object_median": 1473, "size_cm_median": [11.6, 10.6], "spacing_mm_median": 1.8, "px_native_median": 52, "px_2cm_median": 5.8, "facing": "wall 5"}
+ },
+ "fragments_lt_10_points": {"S164/Fire terminal": 4, "S178/Fire terminal": 4, "S178/Outlet": 2, "S179/Exit sign": 2, "S179/Fire terminal": 7, "S163/Exit sign": 1, "S163/Fire terminal": 4},
+ "panorama": {
+  "S163": {"how": "tripod disc found, radius 0.75 m", "size": [1800, 3600], "filled_fraction": 0.53, "pixels": {"Damper #0 (1.5 m)": 926, "Exit sign #0 (1.2 m)": 7105, "Fire terminal #0 (2.5 m)": 2857, "Switch #0 (1.0 m)": 1201}},
+  "S169": {"how": "tripod disc found, radius 0.75 m", "size": [1800, 3600], "filled_fraction": 0.76, "pixels": {"Outlet #0 (2.4 m)": 220, "Outlet #1 (2.7 m)": 76, "Outlet #2 (2.7 m)": 75, "Outlet #3 (2.6 m)": 22}}
+ },
+ "visual_check": "Close-ups: switches (yellow frame / dark square in intensity), smoke detectors (round, ceiling), exit signs and fire extinguishers clearly recognisable; outlets clearly recognisable (socket face) when scanned at 2-3 mm, poorly when at 6 mm or very oblique (S168 #1, S178 #1). Panoramas from the tripod position look like photographs; all S163 objects recognisable by eye; S169 outlets are a row of sockets on wall trunking behind a desk, visible but small (22-220 px).",
+ "decision": "GO for the 2D route (zero-shot first). Caveats: very few objects per class (train: Damper 2, Exit sign 7, Fire terminal 14, Outlet 7, Switch 4; val: 1/1/1/4/1) -> no 2D training from our data alone; validation IoU of four classes rests on a single object."
+}

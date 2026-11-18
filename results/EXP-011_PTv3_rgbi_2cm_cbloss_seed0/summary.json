@@ -1,0 +1,9 @@
+{"_source": "Read by the authors from the log of Kaggle 14-ptv3-baseline version 7 (scriptVersionId 370137407), 2026-11-16 16:22 Asia/Dhaka.",
+ "run": "EXP-011_PTv3_rgbi_2cm_cbloss_seed0", "seed": 0, "kaggle_version": 7, "training_h": 4.90, "best_epoch": 40,
+ "loss": "per-point label-smoothed CE (0.2) weighted by the class-balanced weight of the true class (Cui et al. 2019, beta 0.9999), normalised by the sum of weights",
+ "val_2cm": {"mIoU": 68.48, "small_mIoU": 48.99, "mAcc": 80.53, "OA": 92.19},
+ "val_original_points": {"mIoU": 68.39, "small_mIoU": 47.71, "mAcc": 79.84, "OA": 94.08},
+ "iou_original": {"Components": 91.98, "Covering": 99.30, "Damper": 44.92, "Door": 77.40, "Exit sign": 76.02, "Fire terminal": 98.35, "Furniture": 73.53, "Heater": 86.45, "Lamp": 75.64, "Outlet": 11.99, "Slab": 96.16, "Switch": 7.26, "Wall": 90.77, "Window": 43.61, "Clutter": 52.53},
+ "readout": {"Damper": "GT 1,522 pts -> 100% Damper; predicted as Damper 3,388 pts", "Outlet": "GT 820 -> Wall 61.7%, Outlet 38.3%; predicted as Outlet 2,113 pts, 14.9% correct", "Switch": "GT 1,473 -> Wall 92.7%, Switch 7.3%; predicted as Switch 123 pts, 87.8% correct"},
+ "compare_same_seed_unweighted_EXP-007": {"mIoU": 68.07, "small_mIoU": 48.69, "Damper": 72.88, "Exit sign": 86.23, "Fire terminal": 84.33, "Outlet": 0.0, "Switch": 0.0},
+ "test_predicted_points": "Outlet 644, Switch 333, Damper 5,037 over S170+S171+S180 (no submission made)"}

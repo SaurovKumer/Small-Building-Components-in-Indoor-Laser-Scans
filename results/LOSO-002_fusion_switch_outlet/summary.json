@@ -1,0 +1,118 @@
+{
+ "_source": "Log of Kaggle notebook 13-loso-2d-module version 5 (= notebook 13 version 2, LOSO-002; GPU T4 x2, 868.0 s), read 2026-11-14 about 22:33 Asia/Dhaka. Damper / Exit sign / Fire terminal identical to D alone in all fused rows.",
+ "rows": [
+  {
+   "variant": "D alone",
+   "votes": "2",
+   "small_mIoU": "35.7",
+   "outlet": "34.99 (7/11, fp 7)",
+   "switch": "20.25 (2/5, fp 3)"
+  },
+  {
+   "variant": "N alone",
+   "votes": "2",
+   "small_mIoU": "26.14",
+   "outlet": "30.14 (7/11, fp 22)",
+   "switch": "19.13 (3/5, fp 10)"
+  },
+  {
+   "variant": "D + fused w=0.3",
+   "votes": "2",
+   "small_mIoU": "36.02",
+   "outlet": "36.42 (7/11, fp 6)",
+   "switch": "20.45 (2/5, fp 1)"
+  },
+  {
+   "variant": "D + fused w=0.5",
+   "votes": "2",
+   "small_mIoU": "38.27",
+   "outlet": "31.79 (7/11, fp 10)",
+   "switch": "36.33 (3/5, fp 4)"
+  },
+  {
+   "variant": "D + fused w=0.7",
+   "votes": "2",
+   "small_mIoU": "37.42",
+   "outlet": "31.12 (7/11, fp 13)",
+   "switch": "32.75 (3/5, fp 13)"
+  },
+  {
+   "variant": "D alone",
+   "votes": "3",
+   "small_mIoU": "38.1",
+   "outlet": "38.54 (7/11, fp 6)",
+   "switch": "20.04 (2/5, fp 1)"
+  },
+  {
+   "variant": "N alone",
+   "votes": "3",
+   "small_mIoU": "30.51",
+   "outlet": "37.08 (7/11, fp 17)",
+   "switch": "24.50 (3/5, fp 5)"
+  },
+  {
+   "variant": "D + fused w=0.3",
+   "votes": "3",
+   "small_mIoU": "38.23",
+   "outlet": "39.00 (7/11, fp 6)",
+   "switch": "20.23 (2/5, fp 1)"
+  },
+  {
+   "variant": "D + fused w=0.5",
+   "votes": "3",
+   "small_mIoU": "41.95",
+   "outlet": "38.91 (7/11, fp 10)",
+   "switch": "38.92 (3/5, fp 2)"
+  },
+  {
+   "variant": "D + fused w=0.7",
+   "votes": "3",
+   "small_mIoU": "41.1",
+   "outlet": "38.07 (7/11, fp 12)",
+   "switch": "35.51 (3/5, fp 13)"
+  }
+ ],
+ "switch_per_station_fused05_votes3_tp_gt_pred_hit_n_fp": {
+  "S164": [
+   0,
+   0,
+   774,
+   0,
+   0,
+   1
+  ],
+  "S165": [
+   1367,
+   1588,
+   1460,
+   1,
+   1,
+   1
+  ],
+  "S178": [
+   0,
+   2754,
+   0,
+   0,
+   1,
+   0
+  ],
+  "S179": [
+   213,
+   410,
+   262,
+   1,
+   2,
+   0
+  ],
+  "S163": [
+   1199,
+   1473,
+   1199,
+   1,
+   1,
+   0
+  ]
+ },
+ "selected": "D for Damper / Exit sign / Fire terminal + fused (w=0.5) D+N for Switch / Outlet, votes 3, cap 1.5 (selected on the same LOSO folds -> mild selection bias)"
+}

@@ -1,0 +1,137 @@
+{
+ "_source": "Computed from results/EXP-007_PTv3_rgbi_2cm_seed0/summary.json and results/EXP-008_PTv3_rgbi_2cm_seed1/summary.json (mean and sample standard deviation, n = 2).",
+ "runs": [
+  "EXP-007 (seed 0)",
+  "EXP-008 (seed 1)"
+ ],
+ "original_points": {
+  "mIoU": [
+   69.01,
+   1.32
+  ],
+  "small_mIoU": [
+   50.23,
+   2.17
+  ],
+  "mAcc": [
+   75.66,
+   0.59
+  ],
+  "OA": [
+   93.98,
+   0.48
+  ]
+ },
+ "points_2cm": {
+  "mIoU": [
+   66.81,
+   2.76
+  ],
+  "small_mIoU": [
+   45.29,
+   5.11
+  ],
+  "mAcc": [
+   75.42,
+   0.91
+  ],
+  "OA": [
+   92.12,
+   0.8
+  ]
+ },
+ "iou_original_points_mean_sd": {
+  "Components": [
+   92.17,
+   0.91
+  ],
+  "Covering": [
+   99.28,
+   0.01
+  ],
+  "Damper": [
+   72.04,
+   1.2
+  ],
+  "Door": [
+   80.91,
+   2.04
+  ],
+  "Exit sign": [
+   87.16,
+   1.31
+  ],
+  "Fire terminal": [
+   91.93,
+   10.75
+  ],
+  "Furniture": [
+   71.03,
+   2.2
+  ],
+  "Heater": [
+   85.93,
+   0.37
+  ],
+  "Lamp": [
+   71.3,
+   3.01
+  ],
+  "Outlet": [
+   0.0,
+   0.0
+  ],
+  "Slab": [
+   95.98,
+   0.04
+  ],
+  "Switch": [
+   0.0,
+   0.0
+  ],
+  "Wall": [
+   89.8,
+   0.8
+  ],
+  "Window": [
+   46.1,
+   3.85
+  ],
+  "Clutter": [
+   51.41,
+   1.85
+  ]
+ },
+ "vs_pointnet2_B1_3seeds": {
+  "B1_mIoU": "58.39 +/- 0.58",
+  "B1_small": "33.81 +/- 0.44",
+  "delta_mIoU": 10.62,
+  "delta_small": 16.42
+ },
+ "rounding": "means rounded half-up from exact values (69.005 -> 69.01, 50.225 -> 50.23, 72.035 -> 72.04)",
+ "hybrid_two_seeds": {
+  "runs": [
+   "HYB-005 (PTv3 seed 0): 75.21 / 70.11",
+   "HYB-006 (PTv3 seed 1): 77.09 / 73.21"
+  ],
+  "mIoU": [
+   76.15,
+   1.33
+  ],
+  "small_mIoU": [
+   71.66,
+   2.19
+  ],
+  "Damper_mean": 72.79,
+  "Exit sign_mean": 87.16,
+  "Fire terminal_mean": 91.93,
+  "Outlet": 25.03,
+  "Switch": 81.4,
+  "gain_over_3D_alone": {
+   "seed0": 7.14,
+   "seed1": 7.15,
+   "small_seed0": 21.42,
+   "small_seed1": 21.45
+  }
+ }
+}

@@ -1,0 +1,318 @@
+{
+ "_source": "Transcribed by hand from the Kaggle log of notebook 04-baseline-pointnet2, version 3 (scriptVersionId 368865469). Headline numbers and per-class IoU are rounded to 2 decimals as printed in the log. The original final_metrics.json, log.jsonl, confusion_val.npy and both checkpoints are in that version's Output tab.",
+ "run": "EXP-002_B1_pointnet2_rgbi_2cm",
+ "kaggle_account": "saurovkumar",
+ "kaggle_version": 3,
+ "code_commit_openpoints": "b7ec10f",
+ "torch": "2.11.0+cu130",
+ "gpu": "Tesla T4",
+ "seed": 0,
+ "best_epoch": 38,
+ "train_hours": 1.84,
+ "kaggle_run_seconds": 6817.4,
+ "metrics_best_checkpoint": {
+  "mIoU": 57.72,
+  "mAcc": 63.75,
+  "OA": 90.38,
+  "small_mIoU": 33.94,
+  "n_classes_present": 15
+ },
+ "metrics_last_epoch_40": {
+  "mIoU": 57.23,
+  "small_mIoU": 33.57,
+  "OA": 89.99
+ },
+ "per_class": [
+  {
+   "id": 0,
+   "name": "Column",
+   "val_points": 0,
+   "iou": null,
+   "small": false
+  },
+  {
+   "id": 1,
+   "name": "Components",
+   "val_points": 4049,
+   "iou": 31.84,
+   "small": false
+  },
+  {
+   "id": 2,
+   "name": "Covering",
+   "val_points": 86847,
+   "iou": 97.65,
+   "small": false
+  },
+  {
+   "id": 3,
+   "name": "Damper",
+   "val_points": 46,
+   "iou": 0.0,
+   "small": true
+  },
+  {
+   "id": 4,
+   "name": "Door",
+   "val_points": 63748,
+   "iou": 82.09,
+   "small": false
+  },
+  {
+   "id": 5,
+   "name": "Exit sign",
+   "val_points": 275,
+   "iou": 80.39,
+   "small": true
+  },
+  {
+   "id": 6,
+   "name": "Fire terminal",
+   "val_points": 316,
+   "iou": 89.31,
+   "small": true
+  },
+  {
+   "id": 7,
+   "name": "Furniture",
+   "val_points": 34094,
+   "iou": 59.48,
+   "small": false
+  },
+  {
+   "id": 8,
+   "name": "Heater",
+   "val_points": 2516,
+   "iou": 77.02,
+   "small": false
+  },
+  {
+   "id": 9,
+   "name": "Lamp",
+   "val_points": 2246,
+   "iou": 79.73,
+   "small": false
+  },
+  {
+   "id": 10,
+   "name": "Outlet",
+   "val_points": 34,
+   "iou": 0.0,
+   "small": true
+  },
+  {
+   "id": 11,
+   "name": "Railing",
+   "val_points": 0,
+   "iou": null,
+   "small": false
+  },
+  {
+   "id": 12,
+   "name": "Slab",
+   "val_points": 79273,
+   "iou": 96.36,
+   "small": false
+  },
+  {
+   "id": 13,
+   "name": "Stair",
+   "val_points": 0,
+   "iou": null,
+   "small": false
+  },
+  {
+   "id": 14,
+   "name": "Switch",
+   "val_points": 27,
+   "iou": 0.0,
+   "small": true
+  },
+  {
+   "id": 15,
+   "name": "Wall",
+   "val_points": 141193,
+   "iou": 85.83,
+   "small": false
+  },
+  {
+   "id": 16,
+   "name": "Window",
+   "val_points": 19477,
+   "iou": 45.08,
+   "small": false
+  },
+  {
+   "id": 17,
+   "name": "Clutter",
+   "val_points": 13969,
+   "iou": 41.09,
+   "small": false
+  }
+ ],
+ "val_history": [
+  {
+   "epoch": 2,
+   "val_mIoU": 31.31,
+   "val_small_mIoU": 0.0,
+   "val_OA": 82.27
+  },
+  {
+   "epoch": 4,
+   "val_mIoU": 33.67,
+   "val_small_mIoU": 0.0,
+   "val_OA": 83.22
+  },
+  {
+   "epoch": 6,
+   "val_mIoU": 32.72,
+   "val_small_mIoU": 0.0,
+   "val_OA": 84.71
+  },
+  {
+   "epoch": 8,
+   "val_mIoU": 31.9,
+   "val_small_mIoU": 0.0,
+   "val_OA": 84.35
+  },
+  {
+   "epoch": 10,
+   "val_mIoU": 41.61,
+   "val_small_mIoU": 0.0,
+   "val_OA": 89.02
+  },
+  {
+   "epoch": 12,
+   "val_mIoU": 45.9,
+   "val_small_mIoU": 12.59,
+   "val_OA": 88.25
+  },
+  {
+   "epoch": 14,
+   "val_mIoU": 50.83,
+   "val_small_mIoU": 21.68,
+   "val_OA": 88.78
+  },
+  {
+   "epoch": 16,
+   "val_mIoU": 55.2,
+   "val_small_mIoU": 30.03,
+   "val_OA": 89.24
+  },
+  {
+   "epoch": 18,
+   "val_mIoU": 52.58,
+   "val_small_mIoU": 29.25,
+   "val_OA": 89.1
+  },
+  {
+   "epoch": 20,
+   "val_mIoU": 55.63,
+   "val_small_mIoU": 30.06,
+   "val_OA": 89.82
+  },
+  {
+   "epoch": 22,
+   "val_mIoU": 55.52,
+   "val_small_mIoU": 31.19,
+   "val_OA": 90.11
+  },
+  {
+   "epoch": 24,
+   "val_mIoU": 55.75,
+   "val_small_mIoU": 32.2,
+   "val_OA": 89.78
+  },
+  {
+   "epoch": 26,
+   "val_mIoU": 56.16,
+   "val_small_mIoU": 31.43,
+   "val_OA": 89.65
+  },
+  {
+   "epoch": 28,
+   "val_mIoU": 56.83,
+   "val_small_mIoU": 31.7,
+   "val_OA": 90.13
+  },
+  {
+   "epoch": 30,
+   "val_mIoU": 56.78,
+   "val_small_mIoU": 31.66,
+   "val_OA": 90.36
+  },
+  {
+   "epoch": 32,
+   "val_mIoU": 57.27,
+   "val_small_mIoU": 33.73,
+   "val_OA": 90.07
+  },
+  {
+   "epoch": 34,
+   "val_mIoU": 56.76,
+   "val_small_mIoU": 32.57,
+   "val_OA": 89.86
+  },
+  {
+   "epoch": 36,
+   "val_mIoU": 57.44,
+   "val_small_mIoU": 33.66,
+   "val_OA": 90.33
+  },
+  {
+   "epoch": 38,
+   "val_mIoU": 57.72,
+   "val_small_mIoU": 33.94,
+   "val_OA": 90.38
+  },
+  {
+   "epoch": 40,
+   "val_mIoU": 57.23,
+   "val_small_mIoU": 33.57,
+   "val_OA": 89.99
+  }
+ ],
+ "train_loss_by_epoch": {
+  "1": 1.6617,
+  "2": 1.4785,
+  "3": 1.419,
+  "4": 1.3735,
+  "5": 1.3155,
+  "6": 1.2872,
+  "7": 1.2657,
+  "8": 1.2383,
+  "9": 1.2208,
+  "10": 1.1901,
+  "11": 1.1733,
+  "12": 1.1608,
+  "13": 1.147,
+  "14": 1.1365,
+  "15": 1.1257,
+  "16": 1.1241,
+  "17": 1.1135,
+  "18": 1.1117,
+  "19": 1.1042,
+  "20": 1.1044,
+  "21": 1.0972,
+  "22": 1.0966,
+  "23": 1.0923,
+  "24": 1.0907,
+  "25": 1.0887,
+  "26": 1.085,
+  "27": 1.0855,
+  "28": 1.0834,
+  "29": 1.0822,
+  "30": 1.0877,
+  "31": 1.0812,
+  "32": 1.0796,
+  "33": 1.0775,
+  "34": 1.0783,
+  "35": 1.078,
+  "36": 1.077,
+  "37": 1.0772,
+  "38": 1.0761,
+  "39": 1.0765,
+  "40": 1.0763
+ },
+ "note": "Validation = S163 + S169 at 2 cm (448,110 points). Not full resolution, not the Codabench test area."
+}

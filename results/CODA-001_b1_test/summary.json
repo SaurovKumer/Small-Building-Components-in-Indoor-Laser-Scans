@@ -1,0 +1,75 @@
+{
+ "_source": "Read from the Codabench page of competition 6927 (My Submissions and Results tabs), 2026-11-14 about 12:38-12:41 Asia/Dhaka.",
+ "submission": {
+  "id": 1052018,
+  "file": "submission_b1_3d_only.zip",
+  "from": "Kaggle notebook 10-hybrid-3d-2d version 2 Output (labels = EXP-003 pred_test)",
+  "model_name": "B1 PointNet++ RGB+intensity (EXP-003)",
+  "task": "Gold - Real labels",
+  "submitted": "2026-11-14 12:37",
+  "status": "Finished",
+  "score": 53.58,
+  "account": "saurovkumer"
+ },
+ "test_metrics_gold_real": {
+  "mIoU": 53.58,
+  "mAcc": 57.2,
+  "OA": 94.37
+ },
+ "leaderboard_at_that_time_gold_real": {
+  "maximem Swin3D (Yang et al., 2023)": {
+   "mIoU": 49.03,
+   "mAcc": 78.3,
+   "OA": 89.72
+  },
+  "starsyu scl": "n/a (only Silver)",
+  "saurovkumer B1 (this)": {
+   "mIoU": 53.58,
+   "mAcc": 57.2,
+   "OA": 94.37
+  }
+ },
+ "submissions_used": "1/4 today, 1/50 total",
+ "note": "The submission was put on the public leaderboard by an accidental click on the 'Add to Leaderboard' icon (the authors mistook it for a details button). the authors decides whether it stays.",
+ "iou_cls": {
+  "Column": 0.0,
+  "Components": 62.47,
+  "Covering": 97.97,
+  "Damper": 0.0,
+  "Door": 81.37,
+  "Exit sign": 41.53,
+  "Fire terminal": 9.56,
+  "Furniture": 76.92,
+  "Heater": 64.01,
+  "Lamp": 74.94,
+  "Outlet": 0.0,
+  "Railing": 79.12,
+  "Slab": 97.29,
+  "Stair": 90.61,
+  "Switch": 0.0,
+  "Wall": 89.42,
+  "Window": 53.13,
+  "Clutter": 46.08
+ },
+ "accuracy_cls": {
+  "Column": 0.0,
+  "Components": 66.61,
+  "Covering": 99.46,
+  "Damper": 0.0,
+  "Door": 92.09,
+  "Exit sign": 41.57,
+  "Fire terminal": 9.62,
+  "Furniture": 79.82,
+  "Heater": 64.01,
+  "Lamp": 75.95,
+  "Outlet": 0.0,
+  "Railing": 88.8,
+  "Slab": 98.27,
+  "Stair": 96.3,
+  "Switch": 0.0,
+  "Wall": 97.44,
+  "Window": 55.93,
+  "Clutter": 63.66
+ },
+ "_source_per_class": "Read from the scoring logs (submission details \u2192 LOGS) on the Codabench page of competition 6927, 2026-11-14 about 15:14 Asia/Dhaka."
+}

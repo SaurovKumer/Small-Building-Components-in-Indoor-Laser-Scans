@@ -1,0 +1,455 @@
+{
+ "_source": "Transcribed by hand from the Kaggle log of notebook 04-baseline-pointnet2, version 7 (\"EXP-005 B1 intensity seed 2\"). Numbers are rounded as printed in the log; means and totals were re-checked by script. Originals (final_metrics.json, log.jsonl, confusion matrices, predictions, pred_test/*.npy, checkpoints) are in that version's Output tab.",
+ "run": "EXP-005_B1_pointnet2_rgbi_2cm_seed2",
+ "kaggle_account": "saurovkumar",
+ "kaggle_version": 7,
+ "code_commit_openpoints": "b7ec10f",
+ "torch": "2.11.0+cu130",
+ "gpu": "Tesla T4",
+ "seed": 2,
+ "use_intensity": true,
+ "parameters_M": 0.966,
+ "best_epoch": 34,
+ "train_hours": 1.88,
+ "kaggle_run_seconds": 6993.3,
+ "metrics_best_checkpoint": {
+  "mIoU": 55.93,
+  "mAcc": 62.05,
+  "OA": 90.2,
+  "small_mIoU": 30.43,
+  "n_classes_present": 15
+ },
+ "metrics_last_epoch_40": {
+  "mIoU": 55.35,
+  "small_mIoU": 30.15,
+  "OA": 90.14
+ },
+ "fullres": {
+  "original_points": 15162393,
+  "mapping": "voxel map (S163 5,530,873 <- 258,097; S169 9,631,520 <- 190,013)",
+  "original_points_metrics": {
+   "mIoU": 57.72,
+   "small_mIoU": 33.46,
+   "mAcc": 63.23,
+   "OA": 92.45
+  },
+  "oracle_2cm": {
+   "mIoU": 91.6,
+   "small_mIoU": 80.19,
+   "mAcc": 94.71,
+   "OA": 99.39
+  }
+ },
+ "per_class": [
+  {
+   "id": 1,
+   "name": "Components",
+   "small": false,
+   "val_points_2cm": 4049,
+   "original_points": 194458,
+   "iou_2cm": 29.79,
+   "iou_original": 35.41,
+   "oracle_2cm": 99.42
+  },
+  {
+   "id": 2,
+   "name": "Covering",
+   "small": false,
+   "val_points_2cm": 86847,
+   "original_points": 5123289,
+   "iou_2cm": 97.81,
+   "iou_original": 99.2,
+   "oracle_2cm": 99.59
+  },
+  {
+   "id": 3,
+   "name": "Damper",
+   "small": true,
+   "val_points_2cm": 46,
+   "original_points": 1522,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 86.47
+  },
+  {
+   "id": 4,
+   "name": "Door",
+   "small": false,
+   "val_points_2cm": 63748,
+   "original_points": 1238402,
+   "iou_2cm": 80.28,
+   "iou_original": 79.45,
+   "oracle_2cm": 98.93
+  },
+  {
+   "id": 5,
+   "name": "Exit sign",
+   "small": true,
+   "val_points_2cm": 275,
+   "original_points": 9694,
+   "iou_2cm": 67.92,
+   "iou_original": 77.6,
+   "oracle_2cm": 97.0
+  },
+  {
+   "id": 6,
+   "name": "Fire terminal",
+   "small": true,
+   "val_points_2cm": 316,
+   "original_points": 5591,
+   "iou_2cm": 84.24,
+   "iou_original": 89.69,
+   "oracle_2cm": 100.0
+  },
+  {
+   "id": 7,
+   "name": "Furniture",
+   "small": false,
+   "val_points_2cm": 34094,
+   "original_points": 1170678,
+   "iou_2cm": 62.39,
+   "iou_original": 63.69,
+   "oracle_2cm": 97.67
+  },
+  {
+   "id": 8,
+   "name": "Heater",
+   "small": false,
+   "val_points_2cm": 2516,
+   "original_points": 77909,
+   "iou_2cm": 72.45,
+   "iou_original": 81.5,
+   "oracle_2cm": 99.29
+  },
+  {
+   "id": 9,
+   "name": "Lamp",
+   "small": false,
+   "val_points_2cm": 2246,
+   "original_points": 32302,
+   "iou_2cm": 78.15,
+   "iou_original": 71.21,
+   "oracle_2cm": 89.52
+  },
+  {
+   "id": 10,
+   "name": "Outlet",
+   "small": true,
+   "val_points_2cm": 34,
+   "original_points": 820,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 49.92
+  },
+  {
+   "id": 12,
+   "name": "Slab",
+   "small": false,
+   "val_points_2cm": 79273,
+   "original_points": 2510378,
+   "iou_2cm": 95.99,
+   "iou_original": 96.86,
+   "oracle_2cm": 99.21
+  },
+  {
+   "id": 14,
+   "name": "Switch",
+   "small": true,
+   "val_points_2cm": 27,
+   "original_points": 1473,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 67.57
+  },
+  {
+   "id": 15,
+   "name": "Wall",
+   "small": false,
+   "val_points_2cm": 141193,
+   "original_points": 3920775,
+   "iou_2cm": 84.53,
+   "iou_original": 86.89,
+   "oracle_2cm": 98.58
+  },
+  {
+   "id": 16,
+   "name": "Window",
+   "small": false,
+   "val_points_2cm": 19477,
+   "original_points": 458889,
+   "iou_2cm": 40.93,
+   "iou_original": 39.37,
+   "oracle_2cm": 96.55
+  },
+  {
+   "id": 17,
+   "name": "Clutter",
+   "small": false,
+   "val_points_2cm": 13969,
+   "original_points": 416213,
+   "iou_2cm": 44.53,
+   "iou_original": 44.85,
+   "oracle_2cm": 94.29
+  }
+ ],
+ "where_original_points_go": {
+  "Components": {
+   "points": 194458,
+   "predicted_as_pct": {
+    "Components": 35.9,
+    "Furniture": 31.7,
+    "Door": 14.1,
+    "Wall": 6.8
+   },
+   "predicted_as_this_class": 72209,
+   "precision_pct": 96.6
+  },
+  "Damper": {
+   "points": 1522,
+   "predicted_as_pct": {
+    "Covering": 82.9,
+    "Lamp": 14.7,
+    "Wall": 2.4
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Exit sign": {
+   "points": 9694,
+   "predicted_as_pct": {
+    "Exit sign": 91.2,
+    "Wall": 8.8
+   },
+   "predicted_as_this_class": 10533,
+   "precision_pct": 83.9
+  },
+  "Fire terminal": {
+   "points": 5591,
+   "predicted_as_pct": {
+    "Fire terminal": 94.9,
+    "Wall": 1.8,
+    "Clutter": 1.6,
+    "Door": 1.4
+   },
+   "predicted_as_this_class": 5627,
+   "precision_pct": 94.3
+  },
+  "Outlet": {
+   "points": 820,
+   "predicted_as_pct": {
+    "Wall": 100.0
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Switch": {
+   "points": 1473,
+   "predicted_as_pct": {
+    "Wall": 69.7,
+    "Fire terminal": 19.3,
+    "Window": 10.3,
+    "Slab": 0.7
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  }
+ },
+ "test_prediction": {
+  "files": [
+   "pred_test/S170labels.npy",
+   "pred_test/S171labels.npy",
+   "pred_test/S180labels.npy"
+  ],
+  "points": {
+   "S170": 5751967,
+   "S171": 8975357,
+   "S180": 5959481
+  },
+  "predicted_points_per_class": {
+   "Column": 0,
+   "Components": 53657,
+   "Covering": 6307667,
+   "Damper": 0,
+   "Door": 1303670,
+   "Exit sign": 464,
+   "Fire terminal": 1205,
+   "Furniture": 1463995,
+   "Heater": 28053,
+   "Lamp": 179867,
+   "Outlet": 0,
+   "Railing": 71593,
+   "Slab": 2833461,
+   "Stair": 256981,
+   "Switch": 0,
+   "Wall": 7603205,
+   "Window": 244101,
+   "Clutter": 338886
+  },
+  "submitted_to_codabench": false
+ },
+ "val_history": [
+  {
+   "epoch": 2,
+   "val_mIoU": 27.6,
+   "val_small_mIoU": 0.0,
+   "val_OA": 77.88
+  },
+  {
+   "epoch": 4,
+   "val_mIoU": 30.84,
+   "val_small_mIoU": 0.0,
+   "val_OA": 79.96
+  },
+  {
+   "epoch": 6,
+   "val_mIoU": 32.98,
+   "val_small_mIoU": 0.0,
+   "val_OA": 83.9
+  },
+  {
+   "epoch": 8,
+   "val_mIoU": 34.18,
+   "val_small_mIoU": 0.0,
+   "val_OA": 84.62
+  },
+  {
+   "epoch": 10,
+   "val_mIoU": 39.53,
+   "val_small_mIoU": 0.0,
+   "val_OA": 86.28
+  },
+  {
+   "epoch": 12,
+   "val_mIoU": 38.43,
+   "val_small_mIoU": 0.0,
+   "val_OA": 87.67
+  },
+  {
+   "epoch": 14,
+   "val_mIoU": 42.91,
+   "val_small_mIoU": 12.47,
+   "val_OA": 88.28
+  },
+  {
+   "epoch": 16,
+   "val_mIoU": 50.65,
+   "val_small_mIoU": 27.6,
+   "val_OA": 87.02
+  },
+  {
+   "epoch": 18,
+   "val_mIoU": 52.49,
+   "val_small_mIoU": 27.24,
+   "val_OA": 88.39
+  },
+  {
+   "epoch": 20,
+   "val_mIoU": 53.87,
+   "val_small_mIoU": 31.49,
+   "val_OA": 89.23
+  },
+  {
+   "epoch": 22,
+   "val_mIoU": 54.09,
+   "val_small_mIoU": 30.11,
+   "val_OA": 89.18
+  },
+  {
+   "epoch": 24,
+   "val_mIoU": 54.27,
+   "val_small_mIoU": 30.09,
+   "val_OA": 88.89
+  },
+  {
+   "epoch": 26,
+   "val_mIoU": 53.86,
+   "val_small_mIoU": 30.51,
+   "val_OA": 89.56
+  },
+  {
+   "epoch": 28,
+   "val_mIoU": 54.26,
+   "val_small_mIoU": 30.3,
+   "val_OA": 89.39
+  },
+  {
+   "epoch": 30,
+   "val_mIoU": 53.48,
+   "val_small_mIoU": 29.27,
+   "val_OA": 89.4
+  },
+  {
+   "epoch": 32,
+   "val_mIoU": 55.03,
+   "val_small_mIoU": 30.98,
+   "val_OA": 89.97
+  },
+  {
+   "epoch": 34,
+   "val_mIoU": 55.93,
+   "val_small_mIoU": 30.43,
+   "val_OA": 90.2
+  },
+  {
+   "epoch": 36,
+   "val_mIoU": 55.32,
+   "val_small_mIoU": 29.94,
+   "val_OA": 90.0
+  },
+  {
+   "epoch": 38,
+   "val_mIoU": 55.12,
+   "val_small_mIoU": 30.46,
+   "val_OA": 90.01
+  },
+  {
+   "epoch": 40,
+   "val_mIoU": 55.35,
+   "val_small_mIoU": 30.15,
+   "val_OA": 90.14
+  }
+ ],
+ "train_loss_by_epoch": {
+  "1": 1.6543,
+  "2": 1.4964,
+  "3": 1.4179,
+  "4": 1.3779,
+  "5": 1.3305,
+  "6": 1.2944,
+  "7": 1.2764,
+  "8": 1.2395,
+  "9": 1.2162,
+  "10": 1.2022,
+  "11": 1.1831,
+  "12": 1.166,
+  "13": 1.1535,
+  "14": 1.1455,
+  "15": 1.133,
+  "16": 1.1238,
+  "17": 1.1197,
+  "18": 1.1382,
+  "19": 1.1144,
+  "20": 1.108,
+  "21": 1.1011,
+  "22": 1.1,
+  "23": 1.0999,
+  "24": 1.0941,
+  "25": 1.0949,
+  "26": 1.0881,
+  "27": 1.0897,
+  "28": 1.0847,
+  "29": 1.0849,
+  "30": 1.0833,
+  "31": 1.0839,
+  "32": 1.0813,
+  "33": 1.0819,
+  "34": 1.0814,
+  "35": 1.0784,
+  "36": 1.0788,
+  "37": 1.0776,
+  "38": 1.0783,
+  "39": 1.0779,
+  "40": 1.078
+ },
+ "note": "Validation = S163 + S169. '2cm' = the 448,110 sub-sampled points; 'original' = all 15,162,393 original points. Seed 2 of B1 (third B1 seed)."
+}

@@ -1,0 +1,458 @@
+{
+ "_source": "Transcribed by hand from the Kaggle log of notebook 04-baseline-pointnet2, version 5 (\"EXP-003 B1 intensity seed 1\"). Numbers are rounded as printed in the log; means and totals were re-checked by script. The original final_metrics.json, log.jsonl, confusion_val.npy, confusion_val_fullres.npy, pred_val_2cm_*.npy, pred_test/*.npy and both checkpoints are in that version's Output tab (44.62 MB).",
+ "run": "EXP-003_B1_pointnet2_rgbi_2cm_seed1",
+ "kaggle_account": "saurovkumar",
+ "kaggle_version": 5,
+ "code_commit_openpoints": "b7ec10f",
+ "torch": "2.11.0+cu130",
+ "gpu": "Tesla T4",
+ "seed": 1,
+ "use_intensity": true,
+ "parameters_M": 0.966,
+ "best_epoch": 40,
+ "train_hours": 1.94,
+ "kaggle_run_seconds": 7228.5,
+ "metrics_best_checkpoint": {
+  "mIoU": 56.67,
+  "mAcc": 64.09,
+  "OA": 89.94,
+  "small_mIoU": 31.53,
+  "n_classes_present": 15
+ },
+ "metrics_last_epoch_40": {
+  "mIoU": 56.67,
+  "small_mIoU": 31.53,
+  "OA": 89.94
+ },
+ "fullres": {
+  "original_points": 15162393,
+  "mapping": "voxel map (S163 5,530,873 <- 258,097; S169 9,631,520 <- 190,013)",
+  "original_points_metrics": {
+   "mIoU": 58.67,
+   "small_mIoU": 33.67,
+   "mAcc": 65.36,
+   "OA": 92.46
+  },
+  "oracle_2cm": {
+   "mIoU": 91.6,
+   "small_mIoU": 80.19,
+   "mAcc": 94.71,
+   "OA": 99.39
+  }
+ },
+ "per_class": [
+  {
+   "id": 1,
+   "name": "Components",
+   "small": false,
+   "val_points_2cm": 4049,
+   "original_points": 194458,
+   "iou_2cm": 41.3,
+   "iou_original": 48.03,
+   "oracle_2cm": 99.42
+  },
+  {
+   "id": 2,
+   "name": "Covering",
+   "small": false,
+   "val_points_2cm": 86847,
+   "original_points": 5123289,
+   "iou_2cm": 97.5,
+   "iou_original": 99.22,
+   "oracle_2cm": 99.59
+  },
+  {
+   "id": 3,
+   "name": "Damper",
+   "small": true,
+   "val_points_2cm": 46,
+   "original_points": 1522,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 86.47
+  },
+  {
+   "id": 4,
+   "name": "Door",
+   "small": false,
+   "val_points_2cm": 63748,
+   "original_points": 1238402,
+   "iou_2cm": 83.02,
+   "iou_original": 81.66,
+   "oracle_2cm": 98.93
+  },
+  {
+   "id": 5,
+   "name": "Exit sign",
+   "small": true,
+   "val_points_2cm": 275,
+   "original_points": 9694,
+   "iou_2cm": 76.19,
+   "iou_original": 80.95,
+   "oracle_2cm": 97.0
+  },
+  {
+   "id": 6,
+   "name": "Fire terminal",
+   "small": true,
+   "val_points_2cm": 316,
+   "original_points": 5591,
+   "iou_2cm": 81.47,
+   "iou_original": 87.39,
+   "oracle_2cm": 100.0
+  },
+  {
+   "id": 7,
+   "name": "Furniture",
+   "small": false,
+   "val_points_2cm": 34094,
+   "original_points": 1170678,
+   "iou_2cm": 50.22,
+   "iou_original": 57.51,
+   "oracle_2cm": 97.67
+  },
+  {
+   "id": 8,
+   "name": "Heater",
+   "small": false,
+   "val_points_2cm": 2516,
+   "original_points": 77909,
+   "iou_2cm": 72.45,
+   "iou_original": 80.71,
+   "oracle_2cm": 99.29
+  },
+  {
+   "id": 9,
+   "name": "Lamp",
+   "small": false,
+   "val_points_2cm": 2246,
+   "original_points": 32302,
+   "iou_2cm": 80.12,
+   "iou_original": 70.5,
+   "oracle_2cm": 89.52
+  },
+  {
+   "id": 10,
+   "name": "Outlet",
+   "small": true,
+   "val_points_2cm": 34,
+   "original_points": 820,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 49.92
+  },
+  {
+   "id": 12,
+   "name": "Slab",
+   "small": false,
+   "val_points_2cm": 79273,
+   "original_points": 2510378,
+   "iou_2cm": 95.85,
+   "iou_original": 96.63,
+   "oracle_2cm": 99.21
+  },
+  {
+   "id": 14,
+   "name": "Switch",
+   "small": true,
+   "val_points_2cm": 27,
+   "original_points": 1473,
+   "iou_2cm": 0.0,
+   "iou_original": 0.0,
+   "oracle_2cm": 67.57
+  },
+  {
+   "id": 15,
+   "name": "Wall",
+   "small": false,
+   "val_points_2cm": 141193,
+   "original_points": 3920775,
+   "iou_2cm": 86.28,
+   "iou_original": 88.1,
+   "oracle_2cm": 98.58
+  },
+  {
+   "id": 16,
+   "name": "Window",
+   "small": false,
+   "val_points_2cm": 19477,
+   "original_points": 458889,
+   "iou_2cm": 47.68,
+   "iou_original": 47.94,
+   "oracle_2cm": 96.55
+  },
+  {
+   "id": 17,
+   "name": "Clutter",
+   "small": false,
+   "val_points_2cm": 13969,
+   "original_points": 416213,
+   "iou_2cm": 38.02,
+   "iou_original": 41.37,
+   "oracle_2cm": 94.29
+  }
+ ],
+ "where_original_points_go": {
+  "Components": {
+   "points": 194458,
+   "predicted_as_pct": {
+    "Components": 48.9,
+    "Furniture": 22.7,
+    "Wall": 12.7,
+    "Clutter": 11.8
+   },
+   "predicted_as_this_class": 98512,
+   "precision_pct": 96.5
+  },
+  "Damper": {
+   "points": 1522,
+   "predicted_as_pct": {
+    "Covering": 94.0,
+    "Wall": 6.0
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Exit sign": {
+   "points": 9694,
+   "predicted_as_pct": {
+    "Exit sign": 98.6,
+    "Wall": 1.4
+   },
+   "predicted_as_this_class": 11682,
+   "precision_pct": 81.9
+  },
+  "Fire terminal": {
+   "points": 5591,
+   "predicted_as_pct": {
+    "Fire terminal": 97.4,
+    "Door": 1.8,
+    "Window": 0.8
+   },
+   "predicted_as_this_class": 6087,
+   "precision_pct": 89.5
+  },
+  "Outlet": {
+   "points": 820,
+   "predicted_as_pct": {
+    "Wall": 81.6,
+    "Clutter": 16.2,
+    "Furniture": 2.2
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  },
+  "Switch": {
+   "points": 1473,
+   "predicted_as_pct": {
+    "Wall": 96.9,
+    "Fire terminal": 3.1
+   },
+   "predicted_as_this_class": 0,
+   "precision_pct": null
+  }
+ },
+ "test_prediction": {
+  "files": [
+   "pred_test/S170labels.npy",
+   "pred_test/S171labels.npy",
+   "pred_test/S180labels.npy"
+  ],
+  "points": {
+   "S170": 5751967,
+   "S171": 8975357,
+   "S180": 5959481
+  },
+  "points_2cm": {
+   "S170": 268187,
+   "S171": 174008,
+   "S180": 303092
+  },
+  "predicted_points_per_class": {
+   "Column": 0,
+   "Components": 55562,
+   "Covering": 6323957,
+   "Damper": 0,
+   "Door": 1337516,
+   "Exit sign": 2694,
+   "Fire terminal": 993,
+   "Furniture": 1522156,
+   "Heater": 38861,
+   "Lamp": 173762,
+   "Outlet": 0,
+   "Railing": 73694,
+   "Slab": 2830323,
+   "Stair": 266828,
+   "Switch": 0,
+   "Wall": 7512533,
+   "Window": 227790,
+   "Clutter": 320136
+  },
+  "submitted_to_codabench": false
+ },
+ "val_history": [
+  {
+   "epoch": 2,
+   "val_mIoU": 26.35,
+   "val_small_mIoU": 0.0,
+   "val_OA": 72.93
+  },
+  {
+   "epoch": 4,
+   "val_mIoU": 33.8,
+   "val_small_mIoU": 0.0,
+   "val_OA": 83.37
+  },
+  {
+   "epoch": 6,
+   "val_mIoU": 33.34,
+   "val_small_mIoU": 0.0,
+   "val_OA": 82.66
+  },
+  {
+   "epoch": 8,
+   "val_mIoU": 38.53,
+   "val_small_mIoU": 0.0,
+   "val_OA": 87.1
+  },
+  {
+   "epoch": 10,
+   "val_mIoU": 36.64,
+   "val_small_mIoU": 0.0,
+   "val_OA": 87.39
+  },
+  {
+   "epoch": 12,
+   "val_mIoU": 45.9,
+   "val_small_mIoU": 14.36,
+   "val_OA": 87.86
+  },
+  {
+   "epoch": 14,
+   "val_mIoU": 47.43,
+   "val_small_mIoU": 20.92,
+   "val_OA": 86.63
+  },
+  {
+   "epoch": 16,
+   "val_mIoU": 51.07,
+   "val_small_mIoU": 21.39,
+   "val_OA": 88.04
+  },
+  {
+   "epoch": 18,
+   "val_mIoU": 54.2,
+   "val_small_mIoU": 28.51,
+   "val_OA": 89.81
+  },
+  {
+   "epoch": 20,
+   "val_mIoU": 54.0,
+   "val_small_mIoU": 28.34,
+   "val_OA": 89.31
+  },
+  {
+   "epoch": 22,
+   "val_mIoU": 55.91,
+   "val_small_mIoU": 32.22,
+   "val_OA": 89.87
+  },
+  {
+   "epoch": 24,
+   "val_mIoU": 53.77,
+   "val_small_mIoU": 32.67,
+   "val_OA": 89.19
+  },
+  {
+   "epoch": 26,
+   "val_mIoU": 52.01,
+   "val_small_mIoU": 22.65,
+   "val_OA": 89.01
+  },
+  {
+   "epoch": 28,
+   "val_mIoU": 54.98,
+   "val_small_mIoU": 32.63,
+   "val_OA": 89.84
+  },
+  {
+   "epoch": 30,
+   "val_mIoU": 55.54,
+   "val_small_mIoU": 32.72,
+   "val_OA": 89.13
+  },
+  {
+   "epoch": 32,
+   "val_mIoU": 55.58,
+   "val_small_mIoU": 30.42,
+   "val_OA": 89.48
+  },
+  {
+   "epoch": 34,
+   "val_mIoU": 56.49,
+   "val_small_mIoU": 31.28,
+   "val_OA": 90.03
+  },
+  {
+   "epoch": 36,
+   "val_mIoU": 56.67,
+   "val_small_mIoU": 31.06,
+   "val_OA": 89.87
+  },
+  {
+   "epoch": 38,
+   "val_mIoU": 55.9,
+   "val_small_mIoU": 29.89,
+   "val_OA": 89.74
+  },
+  {
+   "epoch": 40,
+   "val_mIoU": 56.67,
+   "val_small_mIoU": 31.53,
+   "val_OA": 89.94
+  }
+ ],
+ "train_loss_by_epoch": {
+  "1": 1.6498,
+  "2": 1.4716,
+  "3": 1.4205,
+  "4": 1.3548,
+  "5": 1.3382,
+  "6": 1.3002,
+  "7": 1.2691,
+  "8": 1.248,
+  "9": 1.2137,
+  "10": 1.1845,
+  "11": 1.172,
+  "12": 1.1606,
+  "13": 1.1518,
+  "14": 1.1348,
+  "15": 1.1306,
+  "16": 1.1213,
+  "17": 1.1185,
+  "18": 1.1139,
+  "19": 1.1056,
+  "20": 1.1088,
+  "21": 1.0968,
+  "22": 1.0948,
+  "23": 1.0927,
+  "24": 1.0895,
+  "25": 1.0853,
+  "26": 1.0857,
+  "27": 1.0866,
+  "28": 1.0841,
+  "29": 1.0801,
+  "30": 1.0799,
+  "31": 1.0776,
+  "32": 1.0763,
+  "33": 1.0766,
+  "34": 1.076,
+  "35": 1.0758,
+  "36": 1.0759,
+  "37": 1.075,
+  "38": 1.0747,
+  "39": 1.0739,
+  "40": 1.074
+ },
+ "note": "Validation = S163 + S169. '2cm' = the 448,110 sub-sampled points; 'original' = all 15,162,393 original points (2 cm predictions copied through the voxel map). Not the Codabench test area. One seed of three."
+}

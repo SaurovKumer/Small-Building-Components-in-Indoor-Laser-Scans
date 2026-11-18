@@ -1,0 +1,168 @@
+{
+ "_source": "Executed notebook of Kaggle 15-hybrid-ptv3 version 5 'HYB-006 PTv3 seed1 + 2D' (scriptVersionId 369955591, 1023.3 s, GPU T4 x2), 2026-11-15 ~22:45 Asia/Dhaka; saved as notebooks/executed/15_hybrid_ptv3_v5_HYB-006_PTv3_seed1.ipynb.",
+ "run": "HYB-006_hybrid_ptv3_seed1",
+ "base_run": "EXP-008_PTv3_rgbi_2cm_seed1",
+ "module": "LOSO-002 (same as HYB-005): Damper from D; Switch/Outlet fused D/N w 0.5; votes 3, cap 1.5 fixed before the run",
+ "check": "3D-only line reproduces EXP-008 exactly (69.94 / 51.76)",
+ "protocol_A_original_points": [
+  {
+   "variant": "3D only (PTv3, EXP-008)",
+   "votes": null,
+   "cap": null,
+   "mIoU": 69.94,
+   "small_mIoU": 51.76,
+   "Damper": 71.19,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 0.0,
+   "Switch": 0.0
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "votes": 2,
+   "cap": null,
+   "mIoU": 74.2,
+   "small_mIoU": 64.69,
+   "Damper": 71.7,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 4.55,
+   "Switch": 59.59
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "votes": 2,
+   "cap": 1.5,
+   "mIoU": 75.48,
+   "small_mIoU": 68.37,
+   "Damper": 71.7,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 22.95,
+   "Switch": 59.59
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "votes": 3,
+   "cap": null,
+   "mIoU": 75.69,
+   "small_mIoU": 69.16,
+   "Damper": 72.0,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 4.78,
+   "Switch": 81.4
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "votes": 3,
+   "cap": 1.5,
+   "mIoU": 77.09,
+   "small_mIoU": 73.21,
+   "Damper": 72.0,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 25.03,
+   "Switch": 81.4
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 2,
+   "cap": null,
+   "mIoU": 74.17,
+   "small_mIoU": 64.59,
+   "Damper": 71.19,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 4.55,
+   "Switch": 59.59
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 2,
+   "cap": 1.5,
+   "mIoU": 75.44,
+   "small_mIoU": 68.27,
+   "Damper": 71.19,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 22.95,
+   "Switch": 59.59
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 3,
+   "cap": null,
+   "mIoU": 75.64,
+   "small_mIoU": 69.0,
+   "Damper": 71.19,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 4.78,
+   "Switch": 81.4
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 3,
+   "cap": 1.5,
+   "mIoU": 77.04,
+   "small_mIoU": 73.05,
+   "Damper": 71.19,
+   "Exit sign": 88.08,
+   "Fire terminal": 99.53,
+   "Outlet": 25.03,
+   "Switch": 81.4
+  }
+ ],
+ "validation_selected": {
+  "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+  "votes": 3,
+  "cap": 1.5,
+  "mIoU": 77.09,
+  "small_mIoU": 73.21
+ },
+ "test_zips_small_points": {
+  "submission_hybrid_ptv3_fused.zip": {
+   "S170": {
+    "Damper": 2935,
+    "Fire terminal": 1913,
+    "Switch": 957
+   },
+   "S171": {
+    "Damper": 437,
+    "Exit sign": 44
+   },
+   "S180": {
+    "Exit sign": 2456,
+    "Fire terminal": 2503,
+    "Outlet": 3061
+   }
+  }
+ },
+ "not_submitted": "no Codabench submission (validation only)",
+ "two_seed_hybrid": {
+  "runs": [
+   "HYB-005 (PTv3 seed 0): 75.21 / 70.11",
+   "HYB-006 (PTv3 seed 1): 77.09 / 73.21"
+  ],
+  "mIoU": [
+   76.15,
+   1.33
+  ],
+  "small_mIoU": [
+   71.66,
+   2.19
+  ],
+  "Damper_mean": 72.79,
+  "Exit sign_mean": 87.16,
+  "Fire terminal_mean": 91.93,
+  "Outlet": 25.03,
+  "Switch": 81.4,
+  "gain_over_3D_alone": {
+   "seed0": 7.14,
+   "seed1": 7.15,
+   "small_seed0": 21.42,
+   "small_seed1": 21.45
+  }
+ }
+}

@@ -1,0 +1,262 @@
+{
+ "_source": "Computed by script from the six results/EXP-00x_*/metrics_summary.json files (2026-11-14). mean \u00b1 sample sd over seeds 0,1,2; p = two-sided Welch t-test, n=3 per side, indicative only.",
+ "B0_runs": [
+  "EXP-001",
+  "EXP-004",
+  "EXP-006"
+ ],
+ "B1_runs": [
+  "EXP-002",
+  "EXP-003",
+  "EXP-005"
+ ],
+ "headline": [
+  {
+   "scored_on": "2cm",
+   "metric": "mIoU",
+   "B0_mean": 55.2,
+   "B0_sd": 1.52,
+   "B1_mean": 56.77,
+   "B1_sd": 0.9,
+   "diff": 1.58,
+   "welch_t": 1.55,
+   "welch_df": 3.2,
+   "p": 0.213
+  },
+  {
+   "scored_on": "2cm",
+   "metric": "small_mIoU",
+   "B0_mean": 29.86,
+   "B0_sd": 0.77,
+   "B1_mean": 31.97,
+   "B1_sd": 1.8,
+   "diff": 2.11,
+   "welch_t": 1.87,
+   "welch_df": 2.7,
+   "p": 0.168
+  },
+  {
+   "scored_on": "2cm",
+   "metric": "mAcc",
+   "B0_mean": 60.56,
+   "B0_sd": 1.17,
+   "B1_mean": 63.3,
+   "B1_sd": 1.09,
+   "diff": 2.74,
+   "welch_t": 2.96,
+   "welch_df": 4.0,
+   "p": 0.042
+  },
+  {
+   "scored_on": "2cm",
+   "metric": "OA",
+   "B0_mean": 88.51,
+   "B0_sd": 1.05,
+   "B1_mean": 90.17,
+   "B1_sd": 0.22,
+   "diff": 1.66,
+   "welch_t": 2.69,
+   "welch_df": 2.2,
+   "p": 0.105
+  },
+  {
+   "scored_on": "orig",
+   "metric": "mIoU",
+   "B0_mean": 57.68,
+   "B0_sd": 1.91,
+   "B1_mean": 58.39,
+   "B1_sd": 0.58,
+   "diff": 0.71,
+   "welch_t": 0.61,
+   "welch_df": 2.4,
+   "p": 0.594
+  },
+  {
+   "scored_on": "orig",
+   "metric": "small_mIoU",
+   "B0_mean": 31.61,
+   "B0_sd": 2.64,
+   "B1_mean": 33.81,
+   "B1_sd": 0.44,
+   "diff": 2.2,
+   "welch_t": 1.42,
+   "welch_df": 2.1,
+   "p": 0.285
+  },
+  {
+   "scored_on": "orig",
+   "metric": "mAcc",
+   "B0_mean": 62.84,
+   "B0_sd": 1.47,
+   "B1_mean": 64.37,
+   "B1_sd": 1.07,
+   "diff": 1.54,
+   "welch_t": 1.46,
+   "welch_df": 3.7,
+   "p": 0.223
+  },
+  {
+   "scored_on": "orig",
+   "metric": "OA",
+   "B0_mean": 91.75,
+   "B0_sd": 0.51,
+   "B1_mean": 92.53,
+   "B1_sd": 0.14,
+   "diff": 0.78,
+   "welch_t": 2.59,
+   "welch_df": 2.3,
+   "p": 0.107
+  }
+ ],
+ "per_class_original": [
+  {
+   "id": 1,
+   "name": "Components",
+   "B0_mean": 70.65,
+   "B0_sd": 2.66,
+   "B1_mean": 39.56,
+   "B1_sd": 7.34,
+   "diff": -31.09,
+   "separated": "yes (loss)",
+   "p": 0.011,
+   "diff_2cm": -25.98
+  },
+  {
+   "id": 2,
+   "name": "Covering",
+   "B0_mean": 99.09,
+   "B0_sd": 0.08,
+   "B1_mean": 99.21,
+   "B1_sd": 0.01,
+   "diff": 0.13,
+   "separated": "yes (gain)",
+   "p": 0.1,
+   "diff_2cm": 0.27
+  },
+  {
+   "id": 4,
+   "name": "Door",
+   "B0_mean": 76.97,
+   "B0_sd": 1.06,
+   "B1_mean": 81.02,
+   "B1_sd": 1.37,
+   "diff": 4.05,
+   "separated": "yes (gain)",
+   "p": 0.017,
+   "diff_2cm": 7.33
+  },
+  {
+   "id": 5,
+   "name": "Exit sign",
+   "B0_mean": 66.92,
+   "B0_sd": 8.0,
+   "B1_mean": 79.13,
+   "B1_sd": 1.69,
+   "diff": 12.21,
+   "separated": "yes (gain)",
+   "p": 0.113,
+   "diff_2cm": 14.98
+  },
+  {
+   "id": 6,
+   "name": "Fire terminal",
+   "B0_mean": 91.14,
+   "B0_sd": 6.43,
+   "B1_mean": 89.9,
+   "B1_sd": 2.63,
+   "diff": -1.24,
+   "separated": "no",
+   "p": 0.78,
+   "diff_2cm": -4.43
+  },
+  {
+   "id": 7,
+   "name": "Furniture",
+   "B0_mean": 61.03,
+   "B0_sd": 3.52,
+   "B1_mean": 61.41,
+   "B1_sd": 3.39,
+   "diff": 0.38,
+   "separated": "no",
+   "p": 0.899,
+   "diff_2cm": 0.14
+  },
+  {
+   "id": 8,
+   "name": "Heater",
+   "B0_mean": 79.49,
+   "B0_sd": 7.71,
+   "B1_mean": 82.94,
+   "B1_sd": 3.2,
+   "diff": 3.45,
+   "separated": "no",
+   "p": 0.532,
+   "diff_2cm": 3.75
+  },
+  {
+   "id": 9,
+   "name": "Lamp",
+   "B0_mean": 60.18,
+   "B0_sd": 3.21,
+   "B1_mean": 71.31,
+   "B1_sd": 0.87,
+   "diff": 11.13,
+   "separated": "yes (gain)",
+   "p": 0.021,
+   "diff_2cm": 18.2
+  },
+  {
+   "id": 12,
+   "name": "Slab",
+   "B0_mean": 96.59,
+   "B0_sd": 0.22,
+   "B1_mean": 96.99,
+   "B1_sd": 0.43,
+   "diff": 0.39,
+   "separated": "no",
+   "p": 0.257,
+   "diff_2cm": 0.16
+  },
+  {
+   "id": 15,
+   "name": "Wall",
+   "B0_mean": 83.47,
+   "B0_sd": 0.81,
+   "B1_mean": 87.66,
+   "B1_sd": 0.67,
+   "diff": 4.19,
+   "separated": "yes (gain)",
+   "p": 0.003,
+   "diff_2cm": 5.06
+  },
+  {
+   "id": 16,
+   "name": "Window",
+   "B0_mean": 35.91,
+   "B0_sd": 4.58,
+   "B1_mean": 43.76,
+   "B1_sd": 4.29,
+   "diff": 7.85,
+   "separated": "no",
+   "p": 0.097,
+   "diff_2cm": 5.03
+  },
+  {
+   "id": 17,
+   "name": "Clutter",
+   "B0_mean": 43.78,
+   "B0_sd": 2.58,
+   "B1_mean": 42.91,
+   "B1_sd": 1.77,
+   "diff": -0.87,
+   "separated": "no",
+   "p": 0.659,
+   "diff_2cm": -0.84
+  }
+ ],
+ "never_predicted_in_any_run": [
+  "Damper",
+  "Outlet",
+  "Switch"
+ ]
+}

@@ -1,0 +1,135 @@
+% Figure 1 (pipeline), TikZ. Needs \usepackage{tikz} and
+% \usetikzlibrary{positioning,arrows.meta,fit,backgrounds,calc} in main.tex.
+% Included with \input{figures/fig_pipeline} inside a figure* environment.
+% FIG-004: no scaling, all text \footnotesize (8 pt in the 10 pt class = caption size).
+%  - two-column layout (\iftwocol): the original wide layout, about 175 mm (fits the 522 pt text width);
+%  - review layout: a three-column layout, about 115 mm (fits the 345 pt text width).
+\definecolor{c3d}{RGB}{38,102,166}
+\definecolor{c2d}{RGB}{204,102,0}
+\definecolor{cfu}{RGB}{60,130,60}
+\iftwocol
+% ---------------- wide layout (two-column copy) ----------------
+\adjustbox{max width=\linewidth}{%
+{\sffamily\footnotesize\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tikzpicture}[
+  node distance=4mm and 4mm,
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=11mm, text width=21mm, inner sep=2pt, line width=0.5pt},
+  b3/.style={box, draw=c3d, fill=c3d!8},
+  b2/.style={box, draw=c2d, fill=c2d!8},
+  bf/.style={box, draw=cfu, fill=cfu!8},
+  bi/.style={box, draw=black!60, fill=black!4},
+  arr/.style={-{Stealth[length=2mm]}, line width=0.6pt},
+  lab/.style={font=\sffamily\footnotesize\bfseries, anchor=south west, inner sep=1pt}
+]
+% input
+\node[bi, text width=22mm, minimum height=16mm] (in) {\textbf{TLS station}\\$xyz$, RGB, intensity\\(scan order kept)};
+
+% 3D path
+\node[b3, right=8mm of in, yshift=19mm, text width=30mm] (net) {\textbf{3D network}\\PointNet++ or PTv3};
+\node[b3, right=of net, text width=24mm] (l3) {\textbf{3D labels}\\18 classes per point};
+
+% 2D path, row 1
+\node[b2, right=8mm of in, yshift=-6mm] (pos) {\textbf{Scanner position}\\from scan lines\\(no labels)};
+\node[b2, right=of pos] (ren) {\textbf{Render 25 views}\\RGB + intensity,\\1280\,px, 90$^\circ$};
+\node[b2, right=of ren] (gd) {\textbf{Grounding DINO}\\11 text phrases\\$\rightarrow$ boxes};
+\node[b2, right=of gd] (sam) {\textbf{SAM}\\box $\rightarrow$ mask};
+% 2D path, row 2 (right to left)
+\node[b2, below=7mm of sam] (lift) {\textbf{Lift to 3D}\\visible surface\\($\leq$2\,cm)};
+\node[b2, left=of lift] (feat) {\textbf{Features}\\detector scores,\\3D context, DINOv2};
+\node[b2, left=of feat] (clf) {\textbf{Logistic regression}\\5 small classes\\+ background};
+\node[b2, left=of clf] (vote) {\textbf{Point voting}\\$\geq$3 proposals;\\Switch/Outlet: mean with colour-free model};
+
+% fusion
+\node[bf, right=11mm of sam, yshift=12.5mm, text width=29mm, minimum height=14mm] (fuse) {\textbf{Relabel as Damper,}\\\textbf{Outlet or Switch}\\where the 2D module has $\geq$3 votes};
+\node[bf, below=6mm of fuse, text width=29mm, minimum height=14mm] (cap) {\textbf{Size check}\\segment $>$1.5$\times$ largest\\training object $\rightarrow$ 3D label};
+\node[bi, below=6mm of cap, text width=29mm] (out) {\textbf{Final labels}\\18 classes per point};
+
+% arrows
+\draw[arr] (in.east) -- ++(3mm,0) |- (net.west);
+\draw[arr] (in.east) -- ++(3mm,0) |- (pos.west);
+\draw[arr] (net) -- (l3);
+\draw[arr] (pos) -- (ren);
+\draw[arr] (ren) -- (gd);
+\draw[arr] (gd) -- (sam);
+\draw[arr] (sam) -- (lift);
+\draw[arr] (lift) -- (feat);
+\draw[arr] (feat) -- (clf);
+\draw[arr] (clf) -- (vote);
+\draw[arr] (l3.east) -| (fuse.north);
+\draw[arr] (vote.south) -- ++(0,-4mm) -| ($(fuse.west)+(-5mm,0)$) -- (fuse.west);
+\draw[arr] (fuse) -- (cap);
+\draw[arr] (cap) -- (out);
+
+% backgrounds and labels
+\begin{scope}[on background layer]
+  \node[fit=(net)(l3), inner sep=3mm, fill=c3d!3, draw=c3d!40, dashed, rounded corners=3pt] (g3) {};
+  \node[fit=(pos)(sam)(lift)(vote), inner sep=3mm, fill=c2d!3, draw=c2d!40, dashed, rounded corners=3pt] (g2) {};
+  \node[fit=(fuse)(cap), inner sep=3mm, fill=cfu!3, draw=cfu!40, dashed, rounded corners=3pt] (gf) {};
+\end{scope}
+\node[lab, text=c3d] at (g3.north west) {3D path};
+\node[lab, text=c2d] at (g2.north west) {2D small-component module (from the scanner's view)};
+\node[lab, text=cfu, anchor=south east] at (gf.north east) {Combination};
+\end{tikzpicture}}%
+}
+\else
+% ---------------- three-column layout (review copy) ----------------
+{\sffamily\footnotesize\hyphenpenalty=10000\exhyphenpenalty=10000
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=12mm, text width=31mm, inner sep=2pt, line width=0.5pt},
+  b3/.style={box, draw=c3d, fill=c3d!8},
+  b2/.style={box, draw=c2d, fill=c2d!8},
+  bf/.style={box, draw=cfu, fill=cfu!8},
+  bi/.style={box, draw=black!60, fill=black!4},
+  arr/.style={-{Stealth[length=2mm]}, line width=0.6pt},
+  lab/.style={font=\sffamily\footnotesize\bfseries, inner sep=1pt}
+]
+% columns at x = 0, 37.4, 74.8 mm; rows top to bottom
+\def\cA{0mm}\def\cB{37.4mm}\def\cC{74.8mm}
+% input and 3D path
+\node[bi] (in)  at (\cA, 0mm) {\textbf{TLS station}\\$xyz$, RGB, intensity\\(scan order kept)};
+\node[b3] (net) at (\cB, 0mm) {\textbf{3D network}\\PointNet++ or PTv3};
+\node[b3] (l3)  at (\cC, 0mm) {\textbf{3D labels}\\18 classes per point};
+% 2D module, row 1 (left to right)
+\node[b2] (pos) at (\cA, -22mm) {\textbf{Scanner position}\\from scan lines\\(no labels)};
+\node[b2] (ren) at (\cB, -22mm) {\textbf{Render 25 views}\\RGB + intensity,\\1280\,px, 90$^\circ$};
+\node[b2] (gd)  at (\cC, -22mm) {\textbf{Grounding DINO}\\11 text phrases\\$\rightarrow$ boxes};
+% row 2 (right to left)
+\node[b2] (sam)  at (\cC, -41mm) {\textbf{SAM}\\box $\rightarrow$ mask};
+\node[b2] (lift) at (\cB, -41mm) {\textbf{Lift to 3D}\\visible surface\\($\leq$2\,cm)};
+\node[b2] (feat) at (\cA, -41mm) {\textbf{Features}\\detector scores,\\3D context, DINOv2};
+% row 3 (left to right)
+\node[b2] (clf)  at (\cA, -60mm) {\textbf{Logistic regression}\\5 small classes\\+ background};
+\node[b2] (vote) at (\cB, -60mm) {\textbf{Point voting}\\$\geq$3 proposals; Switch/\\Outlet: mean with\\colour-free model};
+% combination (right to left)
+\node[bf] (fuse) at (\cC, -86mm) {\textbf{Relabel as Damper,}\\\textbf{Outlet or Switch}\\where the 2D module\\has $\geq$3 votes};
+\node[bf] (cap)  at (\cB, -86mm) {\textbf{Size check}\\segment $>$1.5$\times$ largest\\training object $\rightarrow$ 3D label};
+\node[bi] (out)  at (\cA, -86mm) {\textbf{Final labels}\\18 classes per point};
+
+% arrows
+\draw[arr] (in) -- (net);
+\draw[arr] (in) -- (pos);
+\draw[arr] (net) -- (l3);
+\draw[arr] (pos) -- (ren);
+\draw[arr] (ren) -- (gd);
+\draw[arr] (gd) -- (sam);
+\draw[arr] (sam) -- (lift);
+\draw[arr] (lift) -- (feat);
+\draw[arr] (feat) -- (clf);
+\draw[arr] (clf) -- (vote);
+\draw[arr] (vote.east) -| (fuse.north);
+\draw[arr] (l3.east) -- ++(5mm,0) |- (fuse.east);
+\draw[arr] (fuse) -- (cap);
+\draw[arr] (cap) -- (out);
+
+% backgrounds and labels
+\begin{scope}[on background layer]
+  \node[fit=(net)(l3), inner sep=2.5mm, fill=c3d!3, draw=c3d!40, dashed, rounded corners=3pt] (g3) {};
+  \node[fit=(pos)(gd)(sam)(feat)(clf)(vote), inner sep=2.5mm, fill=c2d!3, draw=c2d!40, dashed, rounded corners=3pt] (g2) {};
+  \node[fit=(fuse)(cap)(out), inner sep=2.5mm, fill=cfu!3, draw=cfu!40, dashed, rounded corners=3pt] (gf) {};
+\end{scope}
+\node[lab, text=c3d, anchor=south west] at (g3.north west) {3D path};
+\node[lab, text=c2d, anchor=south east] at (g2.north east) {2D small-component module (scanner view)};
+\node[lab, text=cfu, anchor=south west] at (gf.north west) {Combination};
+\end{tikzpicture}%
+}
+\fi

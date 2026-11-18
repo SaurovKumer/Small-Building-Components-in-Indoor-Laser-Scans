@@ -1,0 +1,12 @@
+# Install PyTorch for your CUDA version first: https://pytorch.org/get-started/locally/
+# (the paper runs used the PyTorch build pre-installed on Kaggle; notebook 14 needs torch >= 2.10)
+numpy
+scipy
+scikit-learn
+matplotlib
+Pillow
+huggingface_hub
+transformers          # Grounding DINO, SAM, DINOv2
+point-transformer-v3==0.1.2
+pypdf                 # figures/fix_pipeline_real_legend.py only
+# PointNet++: OpenPoints from https://github.com/guochengqian/PointNeXt (cloned and built by notebook 04)

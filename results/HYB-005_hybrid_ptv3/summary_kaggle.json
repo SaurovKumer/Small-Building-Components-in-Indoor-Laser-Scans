@@ -1,0 +1,545 @@
+{
+ "cfg": {
+  "run_name": "HYB-005_hybrid_ptv3",
+  "base_run": "EXP-007_PTv3_rgbi_2cm_seed0",
+  "base_name": "PTv3, EXP-007",
+  "train": [
+   "S164",
+   "S165",
+   "S168",
+   "S178",
+   "S179"
+  ],
+  "val": [
+   "S163",
+   "S169"
+  ],
+  "test": [
+   "S170",
+   "S171",
+   "S180"
+  ],
+  "b1_dir": "/kaggle/input",
+  "feature_sets_A": [],
+  "fused_w": 0.5,
+  "fused_votes": 3,
+  "fused_cap": 1.5,
+  "thr_grid": [
+   null
+  ],
+  "min_votes_grid": [
+   1,
+   2,
+   3
+  ],
+  "cap_grid": [
+   null,
+   1.5,
+   2.0,
+   3.0
+  ],
+  "seg_voxel_m": 0.02,
+  "fixed_variants": {
+   "hybrid_H1_mv2": [
+    [
+     3,
+     10,
+     14
+    ],
+    2,
+    null
+   ],
+   "hybrid_H1_mv2_cap2": [
+    [
+     3,
+     10,
+     14
+    ],
+    2,
+    2.0
+   ]
+  },
+  "final_features": "D: + DINOv2 intensity (full)",
+  "small": [
+   3,
+   5,
+   6,
+   10,
+   14
+  ],
+  "phrases": [
+   "light switch",
+   "electrical outlet",
+   "power socket",
+   "smoke detector",
+   "exit sign",
+   "fire extinguisher",
+   "fire alarm button",
+   "small device on a wall",
+   "ceiling lamp",
+   "sign",
+   "door plate"
+  ],
+  "gdino": "IDEA-Research/grounding-dino-base",
+  "sam": "facebook/sam-vit-base",
+  "dino": "facebook/dinov2-base",
+  "box_thr": 0.15,
+  "text_thr": 0.15,
+  "max_boxes": 60,
+  "max_box_frac": 0.08,
+  "size": 1280,
+  "fov": 90.0,
+  "scanner_height_m": 1.6,
+  "surface_tol_m": 0.02,
+  "sources": [
+   "rgb",
+   "int"
+  ],
+  "merge_m": 0.1,
+  "max_extent_m": 0.8,
+  "min_points": 10,
+  "label_frac": 0.3,
+  "C": 0.5,
+  "seed": 0,
+  "dedup_iou": 0.7,
+  "same_obj_iou": 0.5
+ },
+ "smoke": false,
+ "stations": {
+  "S164": {
+   "how": "scan lines (22007 lines)",
+   "floor": 13.674,
+   "ceiling": 16.074,
+   "proposals": 318,
+   "seconds": 101.1
+  },
+  "S165": {
+   "how": "scan lines (16979 lines)",
+   "floor": 13.673,
+   "ceiling": 16.113,
+   "proposals": 216,
+   "seconds": 83.0
+  },
+  "S168": {
+   "how": "scan lines (23817 lines)",
+   "floor": 13.673,
+   "ceiling": 16.073,
+   "proposals": 210,
+   "seconds": 83.1
+  },
+  "S178": {
+   "how": "scan lines (13182 lines)",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 275,
+   "seconds": 93.9
+  },
+  "S179": {
+   "how": "scan lines (10773 lines)",
+   "floor": 13.663,
+   "ceiling": 16.463,
+   "proposals": 230,
+   "seconds": 86.8
+  },
+  "S163": {
+   "how": "scan lines (13277 lines)",
+   "floor": 13.678,
+   "ceiling": 16.078,
+   "proposals": 355,
+   "seconds": 97.7
+  },
+  "S169": {
+   "how": "scan lines (38382 lines)",
+   "floor": 13.672,
+   "ceiling": 16.112,
+   "proposals": 162,
+   "seconds": 89.0
+  },
+  "S170": {
+   "how": "scan lines (23747 lines)",
+   "floor": 13.672,
+   "ceiling": 16.072,
+   "proposals": 253,
+   "seconds": 87.9
+  },
+  "S171": {
+   "how": "scan lines (30436 lines)",
+   "floor": 13.671,
+   "ceiling": 16.111,
+   "proposals": 233,
+   "seconds": 92.5
+  },
+  "S180": {
+   "how": "scan lines (7634 lines)",
+   "floor": 15.157,
+   "ceiling": 19.397,
+   "proposals": 112,
+   "seconds": 72.1
+  }
+ },
+ "protocol_A": [
+  {
+   "variant": "3D only (PTv3, EXP-007)",
+   "min_votes": null,
+   "cap_factor": null,
+   "mIoU": 68.07,
+   "small_mIoU": 48.69,
+   "OA": 93.64,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 72.88,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 69.48,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 0.0,
+    "Slab": 95.96,
+    "Switch": 0.0,
+    "Wall": 89.23,
+    "Window": 43.38,
+    "Clutter": 50.1
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 72.35,
+   "small_mIoU": 61.59,
+   "OA": 93.57,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 73.24,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 68.96,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 4.55,
+    "Slab": 95.96,
+    "Switch": 59.59,
+    "Wall": 89.17,
+    "Window": 43.38,
+    "Clutter": 50.44
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 73.59,
+   "small_mIoU": 65.27,
+   "OA": 93.64,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 73.24,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 69.48,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 22.95,
+    "Slab": 95.97,
+    "Switch": 59.59,
+    "Wall": 89.24,
+    "Window": 43.38,
+    "Clutter": 50.1
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 73.84,
+   "small_mIoU": 66.06,
+   "OA": 93.58,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 73.57,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 68.97,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 4.78,
+    "Slab": 95.96,
+    "Switch": 81.4,
+    "Wall": 89.19,
+    "Window": 43.38,
+    "Clutter": 50.43
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 75.21,
+   "small_mIoU": 70.11,
+   "OA": 93.64,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 73.57,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 69.48,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 25.03,
+    "Slab": 95.97,
+    "Switch": 81.4,
+    "Wall": 89.25,
+    "Window": 43.38,
+    "Clutter": 50.1
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 72.33,
+   "small_mIoU": 61.52,
+   "OA": 93.57,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 72.88,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 68.96,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 4.55,
+    "Slab": 95.96,
+    "Switch": 59.59,
+    "Wall": 89.17,
+    "Window": 43.38,
+    "Clutter": 50.44
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 73.57,
+   "small_mIoU": 65.2,
+   "OA": 93.64,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 72.88,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 69.48,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 22.95,
+    "Slab": 95.97,
+    "Switch": 59.59,
+    "Wall": 89.24,
+    "Window": 43.38,
+    "Clutter": 50.1
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 73.8,
+   "small_mIoU": 65.92,
+   "OA": 93.58,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 72.88,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 68.97,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 4.78,
+    "Slab": 95.96,
+    "Switch": 81.4,
+    "Wall": 89.19,
+    "Window": 43.38,
+    "Clutter": 50.43
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 75.16,
+   "small_mIoU": 69.98,
+   "OA": 93.64,
+   "iou": {
+    "Components": 91.53,
+    "Covering": 99.29,
+    "Damper": 72.88,
+    "Door": 79.47,
+    "Exit sign": 86.23,
+    "Fire terminal": 84.33,
+    "Furniture": 69.48,
+    "Heater": 85.67,
+    "Lamp": 73.43,
+    "Outlet": 25.03,
+    "Slab": 95.97,
+    "Switch": 81.4,
+    "Wall": 89.25,
+    "Window": 43.38,
+    "Clutter": 50.1
+   }
+  }
+ ],
+ "validation_selected": {
+  "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+  "mIoU": 75.21,
+  "small_mIoU": 70.11,
+  "zip": "submission_hybrid_ptv3_fused.zip"
+ },
+ "protocol_B": {
+  "setting": {
+   "w": 0.5,
+   "votes": 3,
+   "cap": 1.5
+  },
+  "small_points_per_station": {
+   "ptv3_3d_only": {
+    "S170": {
+     "Damper": 2194,
+     "Exit sign": 0,
+     "Fire terminal": 1897,
+     "Outlet": 0,
+     "Switch": 0
+    },
+    "S171": {
+     "Damper": 94,
+     "Exit sign": 0,
+     "Fire terminal": 0,
+     "Outlet": 0,
+     "Switch": 0
+    },
+    "S180": {
+     "Damper": 0,
+     "Exit sign": 6499,
+     "Fire terminal": 6359,
+     "Outlet": 0,
+     "Switch": 0
+    }
+   },
+   "hybrid_ptv3_fused": {
+    "S170": {
+     "Damper": 2935,
+     "Exit sign": 0,
+     "Fire terminal": 1897,
+     "Outlet": 0,
+     "Switch": 957
+    },
+    "S171": {
+     "Damper": 94,
+     "Exit sign": 0,
+     "Fire terminal": 0,
+     "Outlet": 0,
+     "Switch": 0
+    },
+    "S180": {
+     "Damper": 0,
+     "Exit sign": 6499,
+     "Fire terminal": 6359,
+     "Outlet": 3061,
+     "Switch": 0
+    }
+   },
+   "hybrid_ptv3_fused_so": {
+    "S170": {
+     "Damper": 2194,
+     "Exit sign": 0,
+     "Fire terminal": 1897,
+     "Outlet": 0,
+     "Switch": 957
+    },
+    "S171": {
+     "Damper": 94,
+     "Exit sign": 0,
+     "Fire terminal": 0,
+     "Outlet": 0,
+     "Switch": 0
+    },
+    "S180": {
+     "Damper": 0,
+     "Exit sign": 6499,
+     "Fire terminal": 6359,
+     "Outlet": 3061,
+     "Switch": 0
+    }
+   }
+  },
+  "segment_filter": {
+   "hybrid_ptv3_fused": {
+    "S170": {
+     "Damper": {
+      "cap": 4987,
+      "changed_points": 741,
+      "segments": 3,
+      "largest": 738,
+      "removed_segments": 0,
+      "removed_points": 0
+     },
+     "Switch": {
+      "cap": 4131,
+      "changed_points": 957,
+      "segments": 1,
+      "largest": 957,
+      "removed_segments": 0,
+      "removed_points": 0
+     }
+    },
+    "S180": {
+     "Outlet": {
+      "cap": 4243,
+      "changed_points": 11591,
+      "segments": 3,
+      "largest": 8530,
+      "removed_segments": 1,
+      "removed_points": 8530
+     }
+    }
+   },
+   "hybrid_ptv3_fused_so": {
+    "S170": {
+     "Switch": {
+      "cap": 4131,
+      "changed_points": 957,
+      "segments": 1,
+      "largest": 957,
+      "removed_segments": 0,
+      "removed_points": 0
+     }
+    },
+    "S180": {
+     "Outlet": {
+      "cap": 4243,
+      "changed_points": 11591,
+      "segments": 3,
+      "largest": 8530,
+      "removed_segments": 1,
+      "removed_points": 8530
+     }
+    }
+   }
+  }
+ }
+}

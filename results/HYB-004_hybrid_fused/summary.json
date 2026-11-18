@@ -1,0 +1,185 @@
+{
+ "_source": "Log of Kaggle notebook 10-hybrid-3d-2d version 5 ('HYB-004', GPU T4 x2, 1106.8 s), read 2026-11-15 about 05:35 Asia/Dhaka.",
+ "protocol_A_val": [
+  {
+   "variant": "3D only (B1, EXP-003)",
+   "min_votes": null,
+   "cap_factor": null,
+   "mIoU": 58.67,
+   "small_mIoU": 33.67,
+   "iou": {
+    "Damper": 0.0,
+    "Exit sign": 80.95,
+    "Fire terminal": 87.39,
+    "Outlet": 0.0,
+    "Switch": 0.0
+   }
+  },
+  {
+   "variant": "H1, D only (HYB-003 module)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 69.98,
+   "small_mIoU": 67.62,
+   "iou": {
+    "Damper": 74.33,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 12.09,
+    "Switch": 82.69
+   }
+  },
+  {
+   "variant": "H1, D only (HYB-003 module)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 70.76,
+   "small_mIoU": 69.95,
+   "iou": {
+    "Damper": 74.33,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 23.74,
+    "Switch": 82.69
+   }
+  },
+  {
+   "variant": "H1, D only (HYB-003 module)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 70.0,
+   "small_mIoU": 67.67,
+   "iou": {
+    "Damper": 74.35,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 13.62,
+    "Switch": 81.4
+   }
+  },
+  {
+   "variant": "H1, D only (HYB-003 module)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 70.78,
+   "small_mIoU": 70.01,
+   "iou": {
+    "Damper": 74.35,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 25.31,
+    "Switch": 81.4
+   }
+  },
+  {
+   "variant": "H1, fused D/N (LOSO-002)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 67.88,
+   "small_mIoU": 61.49,
+   "iou": {
+    "Damper": 74.33,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 4.55,
+    "Switch": 59.59
+   }
+  },
+  {
+   "variant": "H1, fused D/N (LOSO-002)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 69.16,
+   "small_mIoU": 65.17,
+   "iou": {
+    "Damper": 74.33,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 22.95,
+    "Switch": 59.59
+   }
+  },
+  {
+   "variant": "H1, fused D/N (LOSO-002)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 69.36,
+   "small_mIoU": 65.9,
+   "iou": {
+    "Damper": 74.35,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 4.78,
+    "Switch": 81.4
+   }
+  },
+  {
+   "variant": "H1, fused D/N (LOSO-002)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 70.76,
+   "small_mIoU": 69.95,
+   "iou": {
+    "Damper": 74.35,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 25.03,
+    "Switch": 81.4
+   }
+  }
+ ],
+ "protocol_B_test_small_points": {
+  "b1_3d_only": {
+   "S170": {
+    "Fire terminal": 992
+   },
+   "S171": {
+    "Fire terminal": 1
+   },
+   "S180": {
+    "Exit sign": 2694
+   }
+  },
+  "hybrid_H1_D (= HYB-003 H1 valbest = CODA-003)": {
+   "S170": {
+    "Damper": 2931,
+    "Fire terminal": 992
+   },
+   "S171": {
+    "Fire terminal": 1
+   },
+   "S180": {
+    "Exit sign": 2694,
+    "Outlet": 274
+   }
+  },
+  "hybrid_H1_fused": {
+   "S170": {
+    "Damper": 2931,
+    "Fire terminal": 992,
+    "Switch": 957
+   },
+   "S171": {
+    "Fire terminal": 1
+   },
+   "S180": {
+    "Exit sign": 2694,
+    "Outlet": 3061
+   }
+  }
+ },
+ "segment_filter_fused": {
+  "S170 Switch": {
+   "cap": 4131,
+   "changed": 957,
+   "segments": 1
+  },
+  "S180 Outlet": {
+   "cap": 4243,
+   "changed": 11591,
+   "segments": 3,
+   "largest": 8530,
+   "removed_points": 8530
+  }
+ }
+}

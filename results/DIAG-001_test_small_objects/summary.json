@@ -1,0 +1,48 @@
+{
+ "_source": "Kaggle notebook 12-diag-test-small-objects version 2 ('DIAG-001 test diagnostics (rerun)', GPU T4 x2, 1071.7 s); numbers from its log, observations from looking at its galleries, 2026-11-14 about 18:45 Asia/Dhaka. Version 1 was stuck 'Queued' ~1 h 40 min and was stopped.",
+ "funnel_kept_test_by_phrase": {
+  "S170": {
+   "light switch": 12,
+   "electrical outlet": 18,
+   "power socket": 0,
+   "smoke detector": 1,
+   "exit sign": 12,
+   "fire extinguisher": 13,
+   "fire alarm button": 17
+  },
+  "S171": {
+   "light switch": 14,
+   "electrical outlet": 24,
+   "power socket": 4,
+   "smoke detector": 0,
+   "exit sign": 12,
+   "fire extinguisher": 1,
+   "fire alarm button": 11
+  },
+  "S180": {
+   "light switch": 21,
+   "electrical outlet": 15,
+   "power socket": 0,
+   "smoke detector": 0,
+   "exit sign": 0,
+   "fire extinguisher": 0,
+   "fire alarm button": 13
+  }
+ },
+ "note_funnel": "almost no proposal is dropped by the mask / size filters in any station (0-6 per phrase)",
+ "proposal_probabilities_p_over_0.5": {
+  "S163": "Damper 15/15 p>=0.5, Exit sign 13, Fire terminal 2, Outlet 0, Switch 12",
+  "S169": "Outlet 37, Exit sign 3, others 0",
+  "S170": "Damper 17 (top p 1.0), Fire terminal 24 (top p 1.0), Switch 2 (p 0.53/0.50), Outlet 0, Exit sign 0",
+  "S171": "Outlet 2 (0.97, 0.87), Exit sign 1 (0.53), Damper 0 (top 0.42), Switch 0 (top 0.34), Fire terminal 0 (top 0.40)",
+  "S180": "Exit sign 13 (top 0.999), Outlet 14 (top 0.98), Damper 0, Switch 0, Fire terminal 0 (top 0.34)"
+ },
+ "visual": {
+  "S163_val_switch": "true Switch objects are yellow square plates with a small orange light at h 1.14 m; p 0.55-0.99",
+  "S171_test_switch": "several beige / cream square wall plates at h 1.14-1.15 m that look like light switches get only p 0.14-0.34 (Switch) -> rejected",
+  "S180_test_outlet": "the 2D 'Outlet' (p 0.98, h 1.80 m) is a tiny white blob high on a wall - not an outlet (consistent with Outlet IoU 0 in CODA-003)",
+  "S180_test_fire_terminal": "a red wall box at h 1.50 m (likely Fire terminal) gets p 0.34 only",
+  "S170_test_fire_terminal": "the wall fire extinguisher (h 0.72) gets p 1.00 from the 2D module (12 votes); also small red boxes at h 1.25 p 0.98-0.99",
+  "3D_segments_test": "B1 Fire terminal segment in S170 (992 pts) = the extinguisher; B1 Exit sign segments in S180 (2,529 + 165 pts) = real exit signs -> 3D precision ok, recall low"
+ }
+}

@@ -1,0 +1,416 @@
+{
+ "_source": "Log of Kaggle notebook 13-loso-2d-module version 2 (GPU T4 x2, 861.2 s; version 1 cancelled, version 2 waited ~2 h in the Kaggle queue), read 2026-11-14 about 22:00 Asia/Dhaka.",
+ "protocol": "LOSO over the 7 Gold stations, 2D module alone (all 5 small classes), cap 1.5, pooled over held-out stations",
+ "results": {
+  "D votes2": {
+   "small_mIoU": 35.7,
+   "Damper": {
+    "iou": 26.17,
+    "recall": "2/3",
+    "false_segments": 1
+   },
+   "Exit sign": {
+    "iou": 85.02,
+    "recall": "5/8",
+    "false_segments": 9
+   },
+   "Fire terminal": {
+    "iou": 12.05,
+    "recall": "5/15",
+    "false_segments": 15
+   },
+   "Outlet": {
+    "iou": 34.99,
+    "recall": "7/11",
+    "false_segments": 7
+   },
+   "Switch": {
+    "iou": 20.25,
+    "recall": "2/5",
+    "false_segments": 3
+   }
+  },
+  "D votes3": {
+   "small_mIoU": 38.1,
+   "Damper": {
+    "iou": 34.3,
+    "recall": "2/3",
+    "false_segments": 1
+   },
+   "Exit sign": {
+    "iou": 85.39,
+    "recall": "5/8",
+    "false_segments": 6
+   },
+   "Fire terminal": {
+    "iou": 12.22,
+    "recall": "5/15",
+    "false_segments": 13
+   },
+   "Outlet": {
+    "iou": 38.54,
+    "recall": "7/11",
+    "false_segments": 6
+   },
+   "Switch": {
+    "iou": 20.04,
+    "recall": "2/5",
+    "false_segments": 1
+   }
+  },
+  "G votes2": {
+   "small_mIoU": 32.83,
+   "Damper": {
+    "iou": 26.17,
+    "recall": "2/3",
+    "false_segments": 1
+   },
+   "Exit sign": {
+    "iou": 79.79,
+    "recall": "5/8",
+    "false_segments": 10
+   },
+   "Fire terminal": {
+    "iou": 9.49,
+    "recall": "3/15",
+    "false_segments": 39
+   },
+   "Outlet": {
+    "iou": 28.63,
+    "recall": "7/11",
+    "false_segments": 17
+   },
+   "Switch": {
+    "iou": 20.07,
+    "recall": "1/5",
+    "false_segments": 4
+   }
+  },
+  "G votes3": {
+   "small_mIoU": 34.96,
+   "Damper": {
+    "iou": 34.3,
+    "recall": "2/3",
+    "false_segments": 1
+   },
+   "Exit sign": {
+    "iou": 80.41,
+    "recall": "5/8",
+    "false_segments": 6
+   },
+   "Fire terminal": {
+    "iou": 9.62,
+    "recall": "3/15",
+    "false_segments": 25
+   },
+   "Outlet": {
+    "iou": 30.64,
+    "recall": "7/11",
+    "false_segments": 16
+   },
+   "Switch": {
+    "iou": 19.85,
+    "recall": "1/5",
+    "false_segments": 3
+   }
+  },
+  "I votes2": {
+   "small_mIoU": 26.47,
+   "Damper": {
+    "iou": 25.97,
+    "recall": "2/3",
+    "false_segments": 13
+   },
+   "Exit sign": {
+    "iou": 55.56,
+    "recall": "5/8",
+    "false_segments": 17
+   },
+   "Fire terminal": {
+    "iou": 7.13,
+    "recall": "3/15",
+    "false_segments": 37
+   },
+   "Outlet": {
+    "iou": 23.35,
+    "recall": "6/11",
+    "false_segments": 11
+   },
+   "Switch": {
+    "iou": 20.36,
+    "recall": "2/5",
+    "false_segments": 5
+   }
+  },
+  "I votes3": {
+   "small_mIoU": 29.57,
+   "Damper": {
+    "iou": 34.07,
+    "recall": "2/3",
+    "false_segments": 9
+   },
+   "Exit sign": {
+    "iou": 57.18,
+    "recall": "5/8",
+    "false_segments": 19
+   },
+   "Fire terminal": {
+    "iou": 7.3,
+    "recall": "3/15",
+    "false_segments": 37
+   },
+   "Outlet": {
+    "iou": 29.15,
+    "recall": "6/11",
+    "false_segments": 8
+   },
+   "Switch": {
+    "iou": 20.15,
+    "recall": "2/5",
+    "false_segments": 5
+   }
+  },
+  "N votes2": {
+   "small_mIoU": 26.14,
+   "Damper": {
+    "iou": 16.9,
+    "recall": "2/3",
+    "false_segments": 29
+   },
+   "Exit sign": {
+    "iou": 56.34,
+    "recall": "6/8",
+    "false_segments": 47
+   },
+   "Fire terminal": {
+    "iou": 8.21,
+    "recall": "3/15",
+    "false_segments": 31
+   },
+   "Outlet": {
+    "iou": 30.14,
+    "recall": "7/11",
+    "false_segments": 22
+   },
+   "Switch": {
+    "iou": 19.13,
+    "recall": "3/5",
+    "false_segments": 10
+   }
+  },
+  "N votes3": {
+   "small_mIoU": 30.51,
+   "Damper": {
+    "iou": 21.13,
+    "recall": "2/3",
+    "false_segments": 18
+   },
+   "Exit sign": {
+    "iou": 61.43,
+    "recall": "6/8",
+    "false_segments": 27
+   },
+   "Fire terminal": {
+    "iou": 8.41,
+    "recall": "3/15",
+    "false_segments": 35
+   },
+   "Outlet": {
+    "iou": 37.08,
+    "recall": "7/11",
+    "false_segments": 17
+   },
+   "Switch": {
+    "iou": 24.5,
+    "recall": "3/5",
+    "false_segments": 5
+   }
+  },
+  "B votes2": {
+   "small_mIoU": 22.73,
+   "Damper": {
+    "iou": 18.92,
+    "recall": "2/3",
+    "false_segments": 23
+   },
+   "Exit sign": {
+    "iou": 41.09,
+    "recall": "6/8",
+    "false_segments": 37
+   },
+   "Fire terminal": {
+    "iou": 8.34,
+    "recall": "3/15",
+    "false_segments": 41
+   },
+   "Outlet": {
+    "iou": 26.32,
+    "recall": "7/11",
+    "false_segments": 18
+   },
+   "Switch": {
+    "iou": 18.96,
+    "recall": "3/5",
+    "false_segments": 3
+   }
+  },
+  "B votes3": {
+   "small_mIoU": 26.09,
+   "Damper": {
+    "iou": 19.49,
+    "recall": "2/3",
+    "false_segments": 8
+   },
+   "Exit sign": {
+    "iou": 52.27,
+    "recall": "6/8",
+    "false_segments": 35
+   },
+   "Fire terminal": {
+    "iou": 8.92,
+    "recall": "3/15",
+    "false_segments": 39
+   },
+   "Outlet": {
+    "iou": 28.23,
+    "recall": "7/11",
+    "false_segments": 17
+   },
+   "Switch": {
+    "iou": 21.53,
+    "recall": "3/5",
+    "false_segments": 2
+   }
+  }
+ },
+ "objects_per_station": {
+  "S164": {
+   "Damper": 1,
+   "Exit sign": 2,
+   "Fire terminal": 2
+  },
+  "S165": {
+   "Outlet": 1,
+   "Switch": 1
+  },
+  "S168": {
+   "Damper": 1,
+   "Outlet": 2
+  },
+  "S178": {
+   "Exit sign": 3,
+   "Fire terminal": 6,
+   "Outlet": 2,
+   "Switch": 1
+  },
+  "S179": {
+   "Exit sign": 2,
+   "Fire terminal": 6,
+   "Outlet": 2,
+   "Switch": 2
+  },
+  "S163": {
+   "Damper": 1,
+   "Exit sign": 1,
+   "Fire terminal": 1,
+   "Switch": 1
+  },
+  "S169": {
+   "Outlet": 4
+  }
+ },
+ "switch_per_heldout_station_tp_gt_pred_hit_n_fp": {
+  "D votes2": {
+   "S164": [
+    0,
+    0,
+    791,
+    0,
+    0,
+    1
+   ],
+   "S165": [
+    0,
+    1588,
+    0,
+    0,
+    1,
+    0
+   ],
+   "S178": [
+    0,
+    2754,
+    0,
+    0,
+    1,
+    0
+   ],
+   "S179": [
+    213,
+    410,
+    263,
+    1,
+    2,
+    2
+   ],
+   "S163": [
+    1218,
+    1473,
+    1218,
+    1,
+    1,
+    0
+   ]
+  },
+  "N votes2": {
+   "S164": [
+    0,
+    0,
+    791,
+    0,
+    0,
+    1
+   ],
+   "S165": [
+    1388,
+    1588,
+    5071,
+    1,
+    1,
+    2
+   ],
+   "S168": [
+    0,
+    0,
+    3,
+    0,
+    0,
+    1
+   ],
+   "S178": [
+    0,
+    2754,
+    445,
+    0,
+    1,
+    1
+   ],
+   "S179": [
+    213,
+    410,
+    552,
+    1,
+    2,
+    1
+   ],
+   "S163": [
+    1218,
+    1473,
+    4470,
+    1,
+    1,
+    4
+   ]
+  }
+ }
+}

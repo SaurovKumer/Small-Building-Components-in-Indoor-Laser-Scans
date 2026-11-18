@@ -1,0 +1,485 @@
+{
+ "cfg": {
+  "run_name": "FIG-001_paper_figures",
+  "base_run": "EXP-008_PTv3_rgbi_2cm_seed1",
+  "base_name": "PTv3, EXP-008",
+  "train": [
+   "S164",
+   "S165",
+   "S168",
+   "S178",
+   "S179"
+  ],
+  "val": [
+   "S163",
+   "S169"
+  ],
+  "test": [],
+  "b1_dir": "/kaggle/input",
+  "feature_sets_A": [],
+  "fused_w": 0.5,
+  "fused_votes": 3,
+  "fused_cap": 1.5,
+  "thr_grid": [
+   null
+  ],
+  "min_votes_grid": [
+   1,
+   2,
+   3
+  ],
+  "cap_grid": [
+   null,
+   1.5,
+   2.0,
+   3.0
+  ],
+  "seg_voxel_m": 0.02,
+  "fixed_variants": {
+   "hybrid_H1_mv2": [
+    [
+     3,
+     10,
+     14
+    ],
+    2,
+    null
+   ],
+   "hybrid_H1_mv2_cap2": [
+    [
+     3,
+     10,
+     14
+    ],
+    2,
+    2.0
+   ]
+  },
+  "final_features": "D: + DINOv2 intensity (full)",
+  "small": [
+   3,
+   5,
+   6,
+   10,
+   14
+  ],
+  "phrases": [
+   "light switch",
+   "electrical outlet",
+   "power socket",
+   "smoke detector",
+   "exit sign",
+   "fire extinguisher",
+   "fire alarm button",
+   "small device on a wall",
+   "ceiling lamp",
+   "sign",
+   "door plate"
+  ],
+  "gdino": "IDEA-Research/grounding-dino-base",
+  "sam": "facebook/sam-vit-base",
+  "dino": "facebook/dinov2-base",
+  "box_thr": 0.15,
+  "text_thr": 0.15,
+  "max_boxes": 60,
+  "max_box_frac": 0.08,
+  "size": 1280,
+  "fov": 90.0,
+  "scanner_height_m": 1.6,
+  "surface_tol_m": 0.02,
+  "sources": [
+   "rgb",
+   "int"
+  ],
+  "merge_m": 0.1,
+  "max_extent_m": 0.8,
+  "min_points": 10,
+  "label_frac": 0.3,
+  "C": 0.5,
+  "seed": 0,
+  "dedup_iou": 0.7,
+  "same_obj_iou": 0.5,
+  "fig2_full": "S180",
+  "fig2_zoom": "S163",
+  "fig3_objects": [
+   [
+    "S163",
+    14,
+    "Switch"
+   ],
+   [
+    "S163",
+    3,
+    "Damper"
+   ],
+   [
+    "S169",
+    10,
+    "Outlet"
+   ]
+  ],
+  "fig3_half": 0.16,
+  "fig3_px": 0.0025
+ },
+ "smoke": false,
+ "stations": {
+  "S164": {
+   "how": "scan lines (22007 lines)",
+   "floor": 13.674,
+   "ceiling": 16.074,
+   "proposals": 318,
+   "seconds": 100.8
+  },
+  "S165": {
+   "how": "scan lines (16979 lines)",
+   "floor": 13.673,
+   "ceiling": 16.113,
+   "proposals": 216,
+   "seconds": 85.5
+  },
+  "S168": {
+   "how": "scan lines (23817 lines)",
+   "floor": 13.673,
+   "ceiling": 16.073,
+   "proposals": 210,
+   "seconds": 89.7
+  },
+  "S178": {
+   "how": "scan lines (13182 lines)",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 275,
+   "seconds": 101.4
+  },
+  "S179": {
+   "how": "scan lines (10773 lines)",
+   "floor": 13.663,
+   "ceiling": 16.463,
+   "proposals": 230,
+   "seconds": 94.2
+  },
+  "S163": {
+   "how": "scan lines (13277 lines)",
+   "floor": 13.678,
+   "ceiling": 16.078,
+   "proposals": 355,
+   "seconds": 105.6
+  },
+  "S169": {
+   "how": "scan lines (38382 lines)",
+   "floor": 13.672,
+   "ceiling": 16.112,
+   "proposals": 162,
+   "seconds": 93.6
+  }
+ },
+ "protocol_A": [
+  {
+   "variant": "3D only (PTv3, EXP-008)",
+   "min_votes": null,
+   "cap_factor": null,
+   "mIoU": 69.94,
+   "small_mIoU": 51.76,
+   "OA": 94.32,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.19,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 72.59,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 0.0,
+    "Slab": 96.01,
+    "Switch": 0.0,
+    "Wall": 90.36,
+    "Window": 48.82,
+    "Clutter": 52.72
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 74.2,
+   "small_mIoU": 64.69,
+   "OA": 94.24,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.7,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 71.8,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 4.55,
+    "Slab": 96.01,
+    "Switch": 59.59,
+    "Wall": 90.3,
+    "Window": 48.82,
+    "Clutter": 52.83
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 75.48,
+   "small_mIoU": 68.37,
+   "OA": 94.33,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.7,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 72.59,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 22.95,
+    "Slab": 96.01,
+    "Switch": 59.59,
+    "Wall": 90.36,
+    "Window": 48.82,
+    "Clutter": 52.73
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 75.69,
+   "small_mIoU": 69.16,
+   "OA": 94.25,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 72.0,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 71.81,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 4.78,
+    "Slab": 96.01,
+    "Switch": 81.4,
+    "Wall": 90.32,
+    "Window": 48.82,
+    "Clutter": 52.83
+   }
+  },
+  {
+   "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 77.09,
+   "small_mIoU": 73.21,
+   "OA": 94.33,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 72.0,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 72.59,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 25.03,
+    "Slab": 96.01,
+    "Switch": 81.4,
+    "Wall": 90.38,
+    "Window": 48.82,
+    "Clutter": 52.73
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 2,
+   "cap_factor": null,
+   "mIoU": 74.17,
+   "small_mIoU": 64.59,
+   "OA": 94.24,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.19,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 71.8,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 4.55,
+    "Slab": 96.01,
+    "Switch": 59.59,
+    "Wall": 90.3,
+    "Window": 48.82,
+    "Clutter": 52.83
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 2,
+   "cap_factor": 1.5,
+   "mIoU": 75.44,
+   "small_mIoU": 68.27,
+   "OA": 94.33,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.19,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 72.59,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 22.95,
+    "Slab": 96.01,
+    "Switch": 59.59,
+    "Wall": 90.36,
+    "Window": 48.82,
+    "Clutter": 52.73
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 3,
+   "cap_factor": null,
+   "mIoU": 75.64,
+   "small_mIoU": 69.0,
+   "OA": 94.25,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.19,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 71.81,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 4.78,
+    "Slab": 96.01,
+    "Switch": 81.4,
+    "Wall": 90.32,
+    "Window": 48.82,
+    "Clutter": 52.83
+   }
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "min_votes": 3,
+   "cap_factor": 1.5,
+   "mIoU": 77.04,
+   "small_mIoU": 73.05,
+   "OA": 94.33,
+   "iou": {
+    "Components": 92.81,
+    "Covering": 99.27,
+    "Damper": 71.19,
+    "Door": 82.35,
+    "Exit sign": 88.08,
+    "Fire terminal": 99.53,
+    "Furniture": 72.59,
+    "Heater": 86.19,
+    "Lamp": 69.17,
+    "Outlet": 25.03,
+    "Slab": 96.01,
+    "Switch": 81.4,
+    "Wall": 90.38,
+    "Window": 48.82,
+    "Clutter": 52.73
+   }
+  }
+ ],
+ "validation_selected": {
+  "variant": "H1 fused (LOSO-002 module, 2D Damper)",
+  "mIoU": 77.09,
+  "small_mIoU": 73.21,
+  "zip": "submission_hybrid_ptv3_fused.zip"
+ },
+ "figures": {
+  "fig2": {
+   "full": {
+    "station": "S180",
+    "runs": 7634,
+    "median_residual_m": 0.0053,
+    "estimate": [
+     62.566,
+     30.198
+    ],
+    "floor_centre": [
+     62.181,
+     30.919
+    ],
+    "distance_m": 0.818,
+    "how_old": "floor centre (no tripod disc)"
+   },
+   "zoom": {
+    "station": "S163",
+    "estimate": [
+     47.036,
+     40.657
+    ],
+    "disc": [
+     47.02,
+     40.653,
+     0.755
+    ],
+    "distance_m": 0.0164
+   }
+  },
+  "fig3": [
+   {
+    "station": "S163",
+    "cls": "Switch",
+    "points": 1473,
+    "centre": [
+     46.338,
+     40.138,
+     14.819
+    ],
+    "recall": {
+     "ptv3": 0.0,
+     "hybrid": 0.814
+    }
+   },
+   {
+    "station": "S163",
+    "cls": "Damper",
+    "points": 1522,
+    "centre": [
+     47.974,
+     39.794,
+     16.036
+    ],
+    "recall": {
+     "ptv3": 0.865,
+     "hybrid": 0.975
+    }
+   },
+   {
+    "station": "S169",
+    "cls": "Outlet",
+    "points": 449,
+    "centre": [
+     52.312,
+     36.828,
+     13.959
+    ],
+    "recall": {
+     "ptv3": 0.0,
+     "hybrid": 0.918
+    }
+   }
+  ]
+ }
+}

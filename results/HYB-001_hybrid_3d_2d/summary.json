@@ -1,0 +1,694 @@
+{
+ "_source": "Transcribed from the Kaggle log of notebook 10-hybrid-3d-2d, version 2 ('HYB-001 GPU hybrid 3D+2D with EXP-003', GPU T4 x2, 1093.5 s, 2026-11-14). summary.json and the five submission zips are in the Output tab.",
+ "check": "3D-only line reproduces EXP-003 exactly (58.67 / 33.67).",
+ "protocol_A": [
+  {
+   "variant": "3D only (B1, EXP-003)",
+   "mIoU": 58.67,
+   "small_mIoU": 33.67,
+   "iou": {
+    "Damper": 0.0,
+    "Exit sign": 80.95,
+    "Fire terminal": 87.39,
+    "Outlet": 0.0,
+    "Switch": 0.0
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 66.93,
+   "small_mIoU": 58.48,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.55
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 69.76,
+   "small_mIoU": 66.95,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 82.15
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 66.92,
+   "small_mIoU": 58.44,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.35
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 69.75,
+   "small_mIoU": 66.91,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 66.89,
+   "small_mIoU": 58.36,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 69.72,
+   "small_mIoU": 66.83,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 81.53
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 65.9,
+   "small_mIoU": 55.4,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 65.53,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.55
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 69.12,
+   "small_mIoU": 65.04,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.4,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 82.15
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 65.96,
+   "small_mIoU": 55.58,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 66.66,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.35
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 69.11,
+   "small_mIoU": 65.0,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.43,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 66.02,
+   "small_mIoU": 55.77,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 67.99,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 69.18,
+   "small_mIoU": 65.23,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 72.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 81.53
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 63.22,
+   "small_mIoU": 47.4,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 65.53,
+    "Fire terminal": 48.03,
+    "Outlet": 9.02,
+    "Switch": 82.55
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 68.21,
+   "small_mIoU": 62.32,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.4,
+    "Fire terminal": 74.46,
+    "Outlet": 9.83,
+    "Switch": 82.15
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 63.28,
+   "small_mIoU": 47.59,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 66.66,
+    "Fire terminal": 48.05,
+    "Outlet": 9.02,
+    "Switch": 82.35
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 68.2,
+   "small_mIoU": 62.3,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.43,
+    "Fire terminal": 74.5,
+    "Outlet": 9.83,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 65.13,
+   "small_mIoU": 53.11,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 67.99,
+    "Fire terminal": 74.75,
+    "Outlet": 9.02,
+    "Switch": 81.94
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "C",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 68.3,
+   "small_mIoU": 62.59,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 72.95,
+    "Fire terminal": 74.86,
+    "Outlet": 9.83,
+    "Switch": 81.53
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 67.0,
+   "small_mIoU": 58.68,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 69.83,
+   "small_mIoU": 67.15,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 67.0,
+   "small_mIoU": 58.68,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 69.83,
+   "small_mIoU": 67.15,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 66.97,
+   "small_mIoU": 58.6,
+   "iou": {
+    "Damper": 32.31,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.69
+   }
+  },
+  {
+   "variant": "H1",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 69.77,
+   "small_mIoU": 66.98,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 80.95,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 82.28
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 65.37,
+   "small_mIoU": 53.86,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 56.83,
+    "Fire terminal": 88.04,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 69.19,
+   "small_mIoU": 65.24,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.41,
+    "Fire terminal": 88.04,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 65.37,
+   "small_mIoU": 53.86,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 56.84,
+    "Fire terminal": 88.04,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 69.19,
+   "small_mIoU": 65.25,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.43,
+    "Fire terminal": 88.04,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 66.12,
+   "small_mIoU": 56.04,
+   "iou": {
+    "Damper": 32.31,
+    "Exit sign": 68.16,
+    "Fire terminal": 88.04,
+    "Outlet": 9.02,
+    "Switch": 82.69
+   }
+  },
+  {
+   "variant": "H2",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 69.24,
+   "small_mIoU": 65.39,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 73.03,
+    "Fire terminal": 88.04,
+    "Outlet": 9.83,
+    "Switch": 82.28
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": null,
+   "min_votes": 1,
+   "mIoU": 65.31,
+   "small_mIoU": 53.68,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 56.83,
+    "Fire terminal": 87.12,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": null,
+   "min_votes": 2,
+   "mIoU": 69.13,
+   "small_mIoU": 65.07,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.41,
+    "Fire terminal": 87.18,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 1,
+   "mIoU": 65.31,
+   "small_mIoU": 53.68,
+   "iou": {
+    "Damper": 31.85,
+    "Exit sign": 56.84,
+    "Fire terminal": 87.12,
+    "Outlet": 9.0,
+    "Switch": 83.57
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": 0.5,
+   "min_votes": 2,
+   "mIoU": 69.13,
+   "small_mIoU": 65.07,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 71.43,
+    "Fire terminal": 87.18,
+    "Outlet": 9.82,
+    "Switch": 83.16
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 1,
+   "mIoU": 66.07,
+   "small_mIoU": 55.9,
+   "iou": {
+    "Damper": 32.31,
+    "Exit sign": 68.16,
+    "Fire terminal": 87.32,
+    "Outlet": 9.02,
+    "Switch": 82.69
+   }
+  },
+  {
+   "variant": "H3",
+   "features": "D",
+   "thr": 0.6,
+   "min_votes": 2,
+   "mIoU": 69.19,
+   "small_mIoU": 65.26,
+   "iou": {
+    "Damper": 73.78,
+    "Exit sign": 73.03,
+    "Fire terminal": 87.37,
+    "Outlet": 9.83,
+    "Switch": 82.28
+   }
+  }
+ ],
+ "protocol_A_objects_fraction_labelled_by_2D_alone": {
+  "C": {
+   "Damper": [
+    0.99
+   ],
+   "Exit sign": [
+    0.99
+   ],
+   "Fire terminal": [
+    0.0
+   ],
+   "Switch": [
+    0.83
+   ],
+   "Outlet": [
+    0.94,
+    1.0,
+    1.0,
+    1.0
+   ]
+  },
+  "D": {
+   "Damper": [
+    0.99
+   ],
+   "Exit sign": [
+    0.99
+   ],
+   "Fire terminal": [
+    0.0
+   ],
+   "Switch": [
+    0.84
+   ],
+   "Outlet": [
+    0.94,
+    1.0,
+    1.0,
+    1.0
+   ]
+  }
+ },
+ "test_stations": {
+  "S170": {
+   "how": "floor centre",
+   "floor": 13.67,
+   "ceiling": 16.07,
+   "proposals": 282
+  },
+  "S171": {
+   "how": "floor centre",
+   "floor": 13.67,
+   "ceiling": 16.11,
+   "proposals": 204
+  },
+  "S180": {
+   "how": "floor centre",
+   "floor": 15.16,
+   "ceiling": 19.4,
+   "proposals": 132
+  }
+ },
+ "protocol_B_small_points": {
+  "b1_3d_only": {
+   "S170": {
+    "Fire terminal": 992
+   },
+   "S171": {
+    "Fire terminal": 1
+   },
+   "S180": {
+    "Exit sign": 2694
+   }
+  },
+  "hybrid_H1 (D, votes 1)": {
+   "S170": {
+    "Damper": 22793,
+    "Fire terminal": 992,
+    "Switch": 308
+   },
+   "S171": {
+    "Fire terminal": 1,
+    "Switch": 7
+   },
+   "S180": {
+    "Exit sign": 2694,
+    "Outlet": 10194
+   }
+  },
+  "hybrid_H1_thr05": {
+   "S170": {
+    "Damper": 20353,
+    "Fire terminal": 992
+   },
+   "S171": {
+    "Fire terminal": 1,
+    "Switch": 7
+   },
+   "S180": {
+    "Exit sign": 2694,
+    "Outlet": 10184
+   }
+  },
+  "hybrid_H2": {
+   "S170": {
+    "Damper": 22793,
+    "Exit sign": 2,
+    "Fire terminal": 992,
+    "Switch": 308
+   },
+   "S171": {
+    "Fire terminal": 1,
+    "Switch": 7
+   },
+   "S180": {
+    "Exit sign": 5544,
+    "Outlet": 10194
+   }
+  },
+  "hybrid_H2_thr05": {
+   "S170": {
+    "Damper": 20353,
+    "Exit sign": 1,
+    "Fire terminal": 992
+   },
+   "S171": {
+    "Fire terminal": 1,
+    "Switch": 7
+   },
+   "S180": {
+    "Exit sign": 5537,
+    "Outlet": 10184
+   }
+  }
+ },
+ "concerns": "Best validation variant (min votes 2) is not among the zips. In the test hybrids Damper gets 20-23k points in S170 and Outlet 10k points in S180 - far more than one object has (Damper ~1.5k, Outlet ~0.2k points per object in Gold) -> likely large false positives; no tripod disc was found in any test station (views from the floor centre)."
+}

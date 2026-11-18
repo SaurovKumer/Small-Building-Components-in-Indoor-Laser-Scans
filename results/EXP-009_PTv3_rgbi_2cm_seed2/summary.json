@@ -1,0 +1,7 @@
+{"_source": "Read by the authors from the log of Kaggle 14-ptv3-baseline version 5 (scriptVersionId 370099456), 2026-11-16 16:20 Asia/Dhaka.",
+ "run": "EXP-009_PTv3_rgbi_2cm_seed2", "seed": 2, "kaggle_version": 5, "runtime": "4h 48m 12s, GPU T4 x2", "training_h": 4.76, "best_epoch": 34,
+ "val_2cm": {"mIoU": 67.73, "small_mIoU": 51.39, "mAcc": 74.12, "OA": 92.18},
+ "val_original_points": {"mIoU": 68.30, "small_mIoU": 51.16, "mAcc": 74.25, "OA": 94.14},
+ "iou_original": {"Components": 93.48, "Covering": 99.28, "Damper": 75.30, "Door": 82.49, "Exit sign": 83.33, "Fire terminal": 97.15, "Furniture": 73.02, "Heater": 64.46, "Lamp": 72.62, "Outlet": 0.0, "Slab": 95.77, "Switch": 0.0, "Wall": 89.91, "Window": 48.28, "Clutter": 49.44},
+ "three_seeds_PTv3_original": {"seeds": {"EXP-007 seed0": [68.07, 48.69], "EXP-008 seed1": [69.94, 51.76], "EXP-009 seed2": [68.30, 51.16]},
+   "mIoU_mean_sd": [68.77, 1.02], "small_mIoU_mean_sd": [50.54, 1.63], "Damper_mean": 73.12, "Exit_sign_mean": 85.88, "Fire_terminal_mean": 93.67, "Outlet": 0.0, "Switch": 0.0, "note": "sd = sample standard deviation (n-1)"}}

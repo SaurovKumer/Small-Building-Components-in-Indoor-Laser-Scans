@@ -1,0 +1,18 @@
+{
+  "_source": "Kaggle 15-hybrid-ptv3 version 6 'HYB-007 PTv3 seed2 + 2D', log read 2026-11-16 by the authors",
+  "run": "HYB-007_hybrid_ptv3_seed2",
+  "base_run": "EXP-009_PTv3_rgbi_2cm_seed2",
+  "runtime_s": 1015.3,
+  "metric": "IoU % on every original point of S163 and S169",
+  "rows": [
+    {"variant": "3D only (PTv3, EXP-009)", "votes": null, "cap": null, "mIoU": 68.30, "small": 51.16, "Damper": 75.30, "Exit sign": 83.33, "Fire terminal": 97.15, "Outlet": 0.0, "Switch": 0.0},
+    {"variant": "H1 fused, 2D Damper", "votes": 2, "cap": null, "mIoU": 72.56, "small": 64.00, "Damper": 75.35, "Exit sign": 83.33, "Fire terminal": 97.15, "Outlet": 4.55, "Switch": 59.59},
+    {"variant": "H1 fused, 2D Damper", "votes": 2, "cap": 1.5, "mIoU": 73.81, "small": 67.68, "Damper": 75.35, "Exit sign": 83.33, "Fire terminal": 97.15, "Outlet": 22.95, "Switch": 59.59},
+    {"variant": "H1 fused, 2D Damper", "votes": 3, "cap": null, "mIoU": 74.06, "small": 68.47, "Damper": 75.71, "Exit sign": 83.33, "Fire terminal": 97.15, "Outlet": 4.78, "Switch": 81.40},
+    {"variant": "H1 fused, 2D Damper (selected)", "votes": 3, "cap": 1.5, "mIoU": 75.43, "small": 72.52, "Damper": 75.71, "Exit sign": 83.33, "Fire terminal": 97.15, "Outlet": 25.03, "Switch": 81.40},
+    {"variant": "Switch/Outlet only (3D keeps Damper)", "votes": 2, "cap": null, "mIoU": 72.56, "small": 63.98},
+    {"variant": "Switch/Outlet only (3D keeps Damper)", "votes": 2, "cap": 1.5, "mIoU": 73.81, "small": 67.66},
+    {"variant": "Switch/Outlet only (3D keeps Damper)", "votes": 3, "cap": null, "mIoU": 74.03, "small": 68.39},
+    {"variant": "Switch/Outlet only (3D keeps Damper)", "votes": 3, "cap": 1.5, "mIoU": 75.40, "small": 72.44, "Damper": 75.30, "Outlet": 25.03, "Switch": 81.40}
+  ]
+}

@@ -1,0 +1,65 @@
+{
+ "_source": "Scoring log (submission details \u2192 LOGS), Codabench 6927, 2026-11-15 about 05:53 Asia/Dhaka.",
+ "submission": {
+  "id": 1052931,
+  "file": "submission_hybrid_H1_fused.zip (Kaggle 10-hybrid-3d-2d version 5, HYB-004)",
+  "task": "Gold - Real labels",
+  "submitted": "2026-11-15 05:51",
+  "status": "Finished",
+  "on_leaderboard": false
+ },
+ "test_metrics": {
+  "mIoU": 57.66,
+  "mAcc": 61.48,
+  "OA": 94.36
+ },
+ "iou_cls": {
+  "Column": 0.0,
+  "Components": 62.75,
+  "Covering": 98.0,
+  "Damper": 73.97,
+  "Door": 81.37,
+  "Exit sign": 41.53,
+  "Fire terminal": 9.56,
+  "Furniture": 76.92,
+  "Heater": 64.01,
+  "Lamp": 74.1,
+  "Outlet": 0.0,
+  "Railing": 79.12,
+  "Slab": 97.29,
+  "Stair": 90.61,
+  "Switch": 0.0,
+  "Wall": 89.42,
+  "Window": 53.13,
+  "Clutter": 46.08
+ },
+ "accuracy_cls": {
+  "Column": 0.0,
+  "Components": 66.61,
+  "Covering": 99.46,
+  "Damper": 78.08,
+  "Door": 92.09,
+  "Exit sign": 41.57,
+  "Fire terminal": 9.62,
+  "Furniture": 79.82,
+  "Heater": 64.01,
+  "Lamp": 75.09,
+  "Outlet": 0.0,
+  "Railing": 88.8,
+  "Slab": 98.27,
+  "Stair": 96.3,
+  "Switch": 0.0,
+  "Wall": 97.42,
+  "Window": 55.93,
+  "Clutter": 63.66
+ },
+ "vs_CODA-003": {
+  "mIoU": 57.71,
+  "changed_classes": {
+   "Lamp": "74.94 -> 74.10",
+   "Wall": "89.42 -> 89.42 (acc 97.43 -> 97.42)"
+  },
+  "unchanged": "Switch 0, Outlet 0"
+ },
+ "submissions_used": "4/4 today (day of 2026-11-14 UTC), 4/50 total"
+}

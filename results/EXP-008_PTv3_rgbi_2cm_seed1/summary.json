@@ -1,0 +1,112 @@
+{
+ "_source": "Read from the log of Kaggle notebook 14-ptv3-baseline, version 4 (scriptVersionId 369858264, 'Successfully ran in 16222.9s'), 2026-11-15 about 22:15 Asia/Dhaka. Executed notebook saved as notebooks/executed/14_ptv3_v4_EXP-008_PTv3_seed1.ipynb. The Output (1.13 GB: checkpoints, final_metrics.json, log.jsonl, confusion matrices, pred_val_2cm_*.npy, pred_test/*.npy) stays on Kaggle.",
+ "run": "EXP-008_PTv3_rgbi_2cm_seed1",
+ "experiment": "BASE-001, second seed (same code and settings as EXP-007 except seed 1)",
+ "kaggle_account": "saurovkumar",
+ "kaggle_notebook": "14-ptv3-baseline",
+ "kaggle_version": 4,
+ "code": "point-transformer-v3==0.1.2 (Pointcept), torch 2.11.0+cu130, Tesla T4 (sm_75: torch fallbacks for sparse conv and attention, padded SDPA)",
+ "model": "PTv3 default config (enc 2-2-2-6-2, channels 32-512, patch 1024, drop_path 0.3) + linear head, 46.2 M parameters; in-network grid 1 cm (rows kept 0.966 of a crop)",
+ "data": "Gold, real labels, 2 cm voxels, XYZ (crop-centred) + RGB + height + intensity, 24,000-point crops, augmentation as notebook 04",
+ "training": "40 epochs x 300 steps, batch 8, AdamW lr 0.002 (blocks 0.1x), wd 0.05, warm-up 5 % + cosine, CE label smoothing 0.2, fp16 + GradScaler, clip 10, seed 1",
+ "probe": {
+  "batch": 8,
+  "peak_gb": 7.81,
+  "s_per_step": 1.24,
+  "rows_kept": 0.97
+ },
+ "train_hours": 4.46,
+ "kaggle_run_seconds": 16222.9,
+ "best_epoch": 40,
+ "val_curve_2cm_mIoU": {
+  "2": 33.2,
+  "4": 38.84,
+  "6": 52.53,
+  "8": 47.33,
+  "10": 52.99,
+  "12": 56.51,
+  "14": 61.44,
+  "16": 55.5,
+  "18": 60.7,
+  "20": 57.0,
+  "22": 66.09,
+  "24": 66.26,
+  "26": 68.46,
+  "28": 67.6,
+  "30": 66.88,
+  "32": 67.22,
+  "34": 68.11,
+  "36": 68.65,
+  "38": 68.71,
+  "40": 68.76
+ },
+ "metrics_2cm": {
+  "mIoU": 68.76,
+  "small_mIoU": 48.9,
+  "mAcc": 76.07,
+  "OA": 92.69
+ },
+ "metrics_original_points": {
+  "mIoU": 69.94,
+  "small_mIoU": 51.76,
+  "mAcc": 76.07,
+  "OA": 94.32
+ },
+ "oracle_2cm": {
+  "mIoU": 91.6,
+  "small_mIoU": 80.19,
+  "mAcc": 94.71,
+  "OA": 99.39
+ },
+ "iou_original_points": {
+  "Components": 92.81,
+  "Covering": 99.27,
+  "Damper": 71.19,
+  "Door": 82.35,
+  "Exit sign": 88.08,
+  "Fire terminal": 99.53,
+  "Furniture": 72.59,
+  "Heater": 86.19,
+  "Lamp": 69.17,
+  "Outlet": 0.0,
+  "Slab": 96.01,
+  "Switch": 0.0,
+  "Wall": 90.36,
+  "Window": 48.82,
+  "Clutter": 52.72
+ },
+ "iou_2cm": {
+  "Components": 80.65,
+  "Covering": 97.82,
+  "Damper": 56.0,
+  "Door": 84.46,
+  "Exit sign": 91.33,
+  "Fire terminal": 97.15,
+  "Furniture": 71.8,
+  "Heater": 78.32,
+  "Lamp": 81.25,
+  "Outlet": 0.0,
+  "Slab": 94.95,
+  "Switch": 0.0,
+  "Wall": 88.7,
+  "Window": 57.49,
+  "Clutter": 51.43
+ },
+ "where_points_go_original": {
+  "Damper": "Damper 86.5 %, Covering 13.5 %; predicted as Damper 1,645 points, 80.1 % correct",
+  "Outlet": "Wall 99.8 %, Clutter 0.2 %; never predicted",
+  "Switch": "Wall 94.9 %, Clutter 5.1 %; never predicted",
+  "Exit sign": "Exit sign 99.3 %; predicted 10,869, 88.6 % correct",
+  "Fire terminal": "Fire terminal 99.5 %; predicted 5,565, 100 % correct",
+  "Components": "Components 95.2 %, Furniture 2.3 %"
+ },
+ "test_predicted_points": {
+  "Damper": 2514,
+  "Exit sign": 2500,
+  "Fire terminal": 4416,
+  "Outlet": 0,
+  "Switch": 0,
+  "Column": 0
+ },
+ "note": "mAcc on the original points is printed as 76.07 (same as at 2 cm) in the log; copied as printed."
+}

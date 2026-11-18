@@ -1,0 +1,206 @@
+{
+ "_source": "Read from the log of Kaggle notebook 15-hybrid-ptv3, version 4 (scriptVersionId 369840025, 'Successfully ran in 1001.9s'), 2026-11-15 about 16:12 Asia/Dhaka. Version 2 (982 s) ran without the notebook-14 input (no 3D part, not a result); version 3 was cancelled.",
+ "base": "EXP-007_PTv3_rgbi_2cm_seed0 (Output of 14-ptv3-baseline v3, attached as notebook input)",
+ "module": "LOSO-002: Damper from feature set D; Switch/Outlet from 0.5 D + 0.5 N; 2D module trained on the 5 training stations (protocol A) / all 7 Gold stations (protocol B)",
+ "protocol_A_val_original_points": [
+  {
+   "variant": "3D only (PTv3, EXP-007)",
+   "votes": null,
+   "cap": null,
+   "mIoU": 68.07,
+   "small_mIoU": 48.69,
+   "Damper": 72.88,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 0.0,
+   "Switch": 0.0
+  },
+  {
+   "variant": "H1 fused (2D Damper)",
+   "votes": 2,
+   "cap": null,
+   "mIoU": 72.35,
+   "small_mIoU": 61.59,
+   "Damper": 73.24,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 4.55,
+   "Switch": 59.59
+  },
+  {
+   "variant": "H1 fused (2D Damper)",
+   "votes": 2,
+   "cap": 1.5,
+   "mIoU": 73.59,
+   "small_mIoU": 65.27,
+   "Damper": 73.24,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 22.95,
+   "Switch": 59.59
+  },
+  {
+   "variant": "H1 fused (2D Damper)",
+   "votes": 3,
+   "cap": null,
+   "mIoU": 73.84,
+   "small_mIoU": 66.06,
+   "Damper": 73.57,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 4.78,
+   "Switch": 81.4
+  },
+  {
+   "variant": "H1 fused (2D Damper)",
+   "votes": 3,
+   "cap": 1.5,
+   "mIoU": 75.21,
+   "small_mIoU": 70.11,
+   "Damper": 73.57,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 25.03,
+   "Switch": 81.4
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 2,
+   "cap": null,
+   "mIoU": 72.33,
+   "small_mIoU": 61.52,
+   "Damper": 72.88,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 4.55,
+   "Switch": 59.59
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 2,
+   "cap": 1.5,
+   "mIoU": 73.57,
+   "small_mIoU": 65.2,
+   "Damper": 72.88,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 22.95,
+   "Switch": 59.59
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 3,
+   "cap": null,
+   "mIoU": 73.8,
+   "small_mIoU": 65.92,
+   "Damper": 72.88,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 4.78,
+   "Switch": 81.4
+  },
+  {
+   "variant": "Switch/Outlet only (3D keeps Damper)",
+   "votes": 3,
+   "cap": 1.5,
+   "mIoU": 75.16,
+   "small_mIoU": 69.98,
+   "Damper": 72.88,
+   "Exit sign": 86.23,
+   "Fire terminal": 84.33,
+   "Outlet": 25.03,
+   "Switch": 81.4
+  }
+ ],
+ "validation_selected": {
+  "variant": "H1 fused (2D Damper), votes 3, cap 1.5",
+  "mIoU": 75.21,
+  "small_mIoU": 70.11,
+  "zip": "submission_hybrid_ptv3_fused.zip"
+ },
+ "compare_pointnet2_hybrid_HYB003_val": {
+  "mIoU": 70.78,
+  "small_mIoU": 70.02
+ },
+ "protocol_B_test_small_points": {
+  "ptv3_3d_only": {
+   "S170": {
+    "Damper": 2194,
+    "Exit sign": 0,
+    "Fire terminal": 1897,
+    "Outlet": 0,
+    "Switch": 0
+   },
+   "S171": {
+    "Damper": 94,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 0,
+    "Switch": 0
+   },
+   "S180": {
+    "Damper": 0,
+    "Exit sign": 6499,
+    "Fire terminal": 6359,
+    "Outlet": 0,
+    "Switch": 0
+   }
+  },
+  "hybrid_ptv3_fused": {
+   "S170": {
+    "Damper": 2935,
+    "Exit sign": 0,
+    "Fire terminal": 1897,
+    "Outlet": 0,
+    "Switch": 957
+   },
+   "S171": {
+    "Damper": 94,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 0,
+    "Switch": 0
+   },
+   "S180": {
+    "Damper": 0,
+    "Exit sign": 6499,
+    "Fire terminal": 6359,
+    "Outlet": 3061,
+    "Switch": 0
+   }
+  },
+  "hybrid_ptv3_fused_so": {
+   "S170": {
+    "Damper": 2194,
+    "Exit sign": 0,
+    "Fire terminal": 1897,
+    "Outlet": 0,
+    "Switch": 957
+   },
+   "S171": {
+    "Damper": 94,
+    "Exit sign": 0,
+    "Fire terminal": 0,
+    "Outlet": 0,
+    "Switch": 0
+   },
+   "S180": {
+    "Damper": 0,
+    "Exit sign": 6499,
+    "Fire terminal": 6359,
+    "Outlet": 3061,
+    "Switch": 0
+   }
+  }
+ },
+ "segment_filter_test": {
+  "S170": {
+   "Damper": "741 changed points, 3 segments, none removed",
+   "Switch": "957 points, 1 segment (cap 4131)"
+  },
+  "S180": {
+   "Outlet": "11,591 changed points in 3 segments; the largest (8,530) removed by the cap -> 3,061 left"
+  }
+ },
+ "note": "The 2D Switch (S170, 957 pts) and Outlet (S180, 3,061 pts) additions on test are the same as in HYB-004 / CODA-004, where they did not help (the S170 'switch' was part of a lamp; DIAG-001: S180 'outlet' = white blob at 1.80 m)."
+}
